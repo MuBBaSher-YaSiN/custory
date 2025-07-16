@@ -3093,12 +3093,13 @@ const HeroComponent = ({ position = [0, 0, 2.5], fov = 25 }) => {
               variants={buttonFloat(0)}
               initial="initial"
               animate={["animate", "floating"]}
-              onClick={() => navigate("https:calendly.com/admincustory/30min")}
               whileHover="hover"
               whileTap="tap"
               className="bg-[#FF6600] text-white cursor-pointer font-medium py-[18px] px-6 rounded-md text-base hover:bg-orange-600 transition max-sm:flex-grow z-10"
             >
-              Book a Call with Our Team
+              <a href="https://calendly.com/admin-custory/30min" target="_blank" className="no-underline bg-[#FF6600] text-white">
+                Book a Call with Our Team
+              </a>
             </motion.button>
             
             <motion.button
