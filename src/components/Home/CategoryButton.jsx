@@ -704,16 +704,16 @@ const CategoryButton = () => {
       await buttonControls.start("visible");
       
       // Wait for a longer time before repeating the flip animation
-      await new Promise(resolve => setTimeout(resolve, 45000)); // 45 seconds
+      // await new Promise(resolve => setTimeout(resolve, 45000)); // 45 seconds
       
       // Reset buttons to prepare for flip animation
-      await buttonControls.start("reset");
+      // await buttonControls.start("reset");
       
       // Animate them back in with the flip effect
-      await buttonControls.start("visible");
+      // await buttonControls.start("visible");
       
       // Recursively call to keep repeating
-      runAnimationSequence();
+      // runAnimationSequence();
     };
     
     runAnimationSequence();

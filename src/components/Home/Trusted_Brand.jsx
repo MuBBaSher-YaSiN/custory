@@ -2052,25 +2052,569 @@
 
 
 
+// import React, { useState, useRef, useEffect } from 'react';
+// import { motion, useAnimation, useInView } from 'framer-motion';
+// import TopLeft from '../../assets/12.svg';
+// import TopRight from '../../assets/1.svg';
+// import BottomRight from '../../assets/31.svg';
+// import BottomLeft from '../../assets/3.svg';
+// import reviewImage2 from '../../assets/review-image2.svg'
+// import yewSeng from '../../assets/yewSeng2.svg'
+// import singaporeSwimming2 from '../../assets/singaporeSwimming2.svg'
+
+// const Trusted_Brand = () => {
+//   const ref = useRef(null);
+//   const isInView = useInView(ref, { once: false, amount: 0.3 });
+//   const controls = useAnimation();
+//   const [activeIndex, setActiveIndex] = useState(0);
+//   const testimonialRefs = useRef([]);
+//   const [slideHeight, setSlideHeight] = useState('auto');
+
+//   // Testimonial data
+//   const testimonials = [
+//     {
+//       quote: "Custory didn't just elevate our brand. They redefined how we communicate value in our industry.",
+//       description: "Samantha and the team approached our brand strategy with business-first thinking. From a website that speaks clearly to clients, to premium gifting and merchandise that our clients and team love - everything Custory delivered was intentional. They helped us stand out in a traditionally conservative industry.",
+//       author: "Tan Teck Poh Edmund",
+//       position: "Managing Director",
+//       image: reviewImage2,
+//       logo: singaporeSwimming2
+//     },
+//     {
+//       quote: "Custory has been professional and comprehensive in their approach and strategy to our sales and marketing needs.",
+//       description: "Looking forward to continued close collaborations to achieve the results we are after!",
+//       author: "Min Yee Koh",
+//       position: "General Manager",
+//       image: "https://custorybucket.s3.ap-southeast-1.amazonaws.com/Landing/person.png",
+//       logo: yewSeng
+//     }
+//   ];
+
+//   // Calculate dynamic height for the slider
+//   useEffect(() => {
+//     const updateHeight = () => {
+//       if (testimonialRefs.current[0] && testimonialRefs.current[1]) {
+//         const height1 = testimonialRefs.current[0].getBoundingClientRect().height;
+//         const height2 = testimonialRefs.current[1].getBoundingClientRect().height;
+//         const maxHeight = Math.max(height1, height2);
+//         if (maxHeight > 0) {
+//           setSlideHeight(`${maxHeight}px`);
+//         }
+//       }
+//     };
+    
+//     // Initial calculation
+//     updateHeight();
+    
+//     // Update on resize
+//     window.addEventListener('resize', updateHeight);
+    
+//     return () => {
+//       window.removeEventListener('resize', updateHeight);
+//     };
+//   }, []);
+
+//   useEffect(() => {
+//     if (isInView) {
+//       controls.start('visible');
+//     }
+//   }, [isInView, controls]);
+
+//   // Animation variants
+//   const objectVariants = {
+//     initial: { opacity: 0, scale: 0.5 },
+//     visible: (i) => ({
+//       opacity: [0.1, 0.2, 0.1],
+//       scale: [0.5, 1, 0.8],
+//       x: [0, i % 2 === 0 ? 30 : -30, 0],
+//       y: [0, i % 3 === 0 ? 20 : -20, 0],
+//       transition: {
+//         duration: i % 2 === 0 ? 20 : 17,
+//         repeat: Infinity,
+//         repeatType: "reverse",
+//         ease: "easeInOut",
+//         delay: i * 0.6
+//       }
+//     })
+//   };
+
+//   const headingVariants = {
+//     initial: { y: -50, opacity: 0 },
+//     visible: {
+//       y: 0,
+//       opacity: 1,
+//       transition: {
+//         type: "spring",
+//         stiffness: 50,
+//         damping: 12,
+//         duration: 0.8
+//       }
+//     }
+//   };
+
+//   const paragraphVariants = {
+//     initial: { y: 30, opacity: 0 },
+//     visible: {
+//       y: 0,
+//       opacity: 1,
+//       transition: {
+//         type: "spring",
+//         stiffness: 50,
+//         damping: 12,
+//         delay: 0.2,
+//         duration: 0.8
+//       }
+//     }
+//   };
+
+//   const cardVariants = {
+//     initial: { 
+//       y: 100, 
+//       opacity: 0, 
+//       rotateX: 10 
+//     },
+//     visible: {
+//       y: 0,
+//       opacity: 1,
+//       rotateX: 0,
+//       transition: {
+//         type: "spring",
+//         stiffness: 50,
+//         damping: 15,
+//         delay: 0.4,
+//         duration: 1,
+//         when: "beforeChildren",
+//         staggerChildren: 0.2
+//       }
+//     }
+//   };
+
+//   const logoVariants = {
+//     initial: { y: 20, opacity: 0, scale: 0.9 },
+//     visible: {
+//       y: 0,
+//       opacity: 1,
+//       scale: 1,
+//       transition: {
+//         type: "spring",
+//         stiffness: 100,
+//         damping: 10,
+//         duration: 0.6
+//       }
+//     }
+//   };
+
+//   const quoteVariants = {
+//     initial: { opacity: 0, y: 20 },
+//     visible: {
+//       opacity: 1,
+//       y: 0,
+//       transition: {
+//         duration: 0.8,
+//         delay: 0.3
+//       }
+//     }
+//   };
+
+//   const authorVariants = {
+//     initial: { opacity: 0, scale: 0.9 },
+//     visible: {
+//       opacity: 1,
+//       scale: 1,
+//       transition: {
+//         duration: 0.6,
+//         delay: 0.6
+//       }
+//     }
+//   };
+
+//   const photoVariants = {
+//     initial: { opacity: 0, scale: 0.7, rotate: -10 },
+//     visible: {
+//       opacity: 1,
+//       scale: 1,
+//       rotate: 0,
+//       transition: {
+//         type: "spring",
+//         stiffness: 60,
+//         damping: 12,
+//         duration: 1,
+//         delay: 0.7
+//       }
+//     },
+//     float: {
+//       y: [0, -10, 0],
+//       rotate: [0, 2, 0],
+//       transition: {
+//         duration: 6,
+//         repeat: Infinity,
+//         repeatType: "reverse",
+//         ease: "easeInOut"
+//       }
+//     }
+//   };
+
+//   const quoteMarkVariants = {
+//     initial: { opacity: 0, scale: 0 },
+//     visible: {
+//       opacity: [0, 1, 0.7],
+//       scale: [0, 1.2, 1],
+//       transition: {
+//         duration: 0.8,
+//         delay: 0.4
+//       }
+//     }
+//   };
+
+//   const sliderVariants = {
+//     initial: { x: 0 },
+//     slide: (direction) => ({
+//       x: direction === 'left' ? '0%' : '-50%',
+//       transition: {
+//         type: "spring",
+//         stiffness: 50,
+//         damping: 20,
+//         duration: 0.8
+//       }
+//     })
+//   };
+
+//   const shapes = ['★', '●', '■', '▲', '◆', '✦'];
+
+//   return (
+//     <motion.div
+//       ref={ref}
+//       className="bg-gradient-to-b from-[#FF6600] via-[39%] via-[#FF711B] to-[#FFB669] sm:py-16 py-12 px-4 md:px-20 relative overflow-hidden h-auto flex items-center flex-col justify-center"
+//       initial="initial"
+//       animate={controls}
+//       style={{ perspective: "1200px" }}
+//     >
+//       {/* Background elements */}
+//       {[...Array(25)].map((_, i) => {
+//         const randomShape = shapes[Math.floor(Math.random() * shapes.length)];
+//         return (
+//           <motion.div
+//             key={i}
+//             className="absolute text-white opacity-10 pointer-events-none"
+//             style={{
+//               fontSize: `${30 + Math.random() * 60}px`,
+//               left: `${Math.random() * 100}%`,
+//               top: `${Math.random() * 100}%`,
+//               zIndex: 0
+//             }}
+//             variants={objectVariants}
+//             custom={i}
+//           >
+//             {randomShape}
+//           </motion.div>
+//         );
+//       })}
+
+//       {/* Heading content */}
+//       <div className="text-center text-white max-w-3xl mx-auto relative z-20">
+//         <motion.h2
+//           className="text-2xl md:text-5xl font-bold"
+//           variants={headingVariants}
+//         >
+//           We deliver and it shows.
+//         </motion.h2>
+//         <motion.p
+//           className="text-sm md:text-[20px] md:leading-[30px] sm:my-16 my-10 max-w-[460px] mx-auto"
+//           variants={paragraphVariants}
+//         >
+//           Trusted by leading brands, we hold ourselves accountable to every promise we make.
+//         </motion.p>
+//       </div>
+
+//       {/* Slider container - Now with dynamic height */}
+//       <motion.div
+//         className="w-full max-w-[1200px] mx-auto overflow-hidden relative z-20"
+//         variants={cardVariants}
+//       >
+//         {/* Navigation dots */}
+//         <div className="flex justify-center gap-2 mb-6">
+//           {testimonials.map((_, i) => (
+//             <button
+//               key={i}
+//               onClick={() => setActiveIndex(i)}
+//               className={`w-3 h-3 rounded-full transition-all duration-300 ${activeIndex === i ? 'bg-white scale-125' : 'bg-white/50'}`}
+//               aria-label={`View testimonial ${i + 1}`}
+//             />
+//           ))}
+//         </div>
+
+//         {/* Testimonial slider with dynamic height */}
+//         <motion.div
+//           className="flex w-[200%]"
+//           variants={sliderVariants}
+//           animate="slide"
+//           custom={activeIndex === 0 ? 'left' : 'right'}
+//           style={{ height: slideHeight, transition: "height 0.3s ease" }}
+//         >
+//           {/* First testimonial */}
+//           <div className="w-1/2 px-4">
+//             <div 
+//               ref={el => testimonialRefs.current[0] = el} 
+//               className="bg-white rounded-[40px] px-4 sm:px-8 md:px-10 py-10 shadow-lg relative overflow-hidden h-full"
+//               style={{ transformStyle: "preserve-3d" }}
+//             >
+//               {/* Quote mark decoration */}
+//               <motion.div
+//                 variants={quoteMarkVariants}
+//                 className="absolute text-[80px] md:text-[150px] font-serif text-orange-100 -left-2 md:-left-5 top-0 leading-none z-0"
+//               >
+//                 "
+//               </motion.div>
+
+//               <div className="flex flex-col md:flex-row items-center gap-6 relative z-10">
+//                 <div className="flex-1 text-center md:text-left">
+//                   <motion.h3
+//                     variants={quoteVariants}
+//                     className="text-[#2f2828] font-bold text-lg md:text-[26px] mb-2"
+//                   >
+//                     "{testimonials[0].quote}"
+//                   </motion.h3>
+//                   <motion.p
+//                     variants={quoteVariants}
+//                     className="md:text-lg text-base text-[#111204] my-5"
+//                   >
+//                     "{testimonials[0].description}"
+//                   </motion.p>
+//                   <motion.div variants={authorVariants} className="mb-4">
+//                     <p className="text-[#ff6600] font-bold text-xl mb-2">{testimonials[0].author}</p>
+//                     <p className="text-base text-[#111204]">{testimonials[0].position}</p>
+//                   </motion.div>
+//                   {/* Logo with proper sizing and constraints */}
+//                   <motion.div
+//                     variants={logoVariants}
+//                     className="md:mx-0 mx-auto mb-4 h-[80px] md:h-[117px] flex items-center"
+//                   >
+//                     <img
+//                       src={testimonials[0].logo}
+//                       alt="Company Logo"
+//                       className="max-h-full w-auto object-contain"
+//                     />
+//                   </motion.div>
+//                 </div>
+
+//                 <motion.div
+//                   className="w-24 h-24 sm:w-32 sm:h-32 md:w-[280px] md:h-[280px] rounded-full overflow-hidden border-4 border-white shadow-md flex-shrink-0"
+//                   variants={photoVariants}
+//                   animate={["visible", "float"]}
+//                   style={{ transformStyle: "preserve-3d" }}
+//                 >
+//                   <img
+//                     src={testimonials[0].image}
+//                     alt={testimonials[0].author}
+//                     className="w-full h-full object-cover rounded-full"
+//                   />
+//                 </motion.div>
+//               </div>
+
+//               <motion.div
+//                 className="absolute inset-0 bg-gradient-to-tr from-orange-100/10 to-transparent rounded-[40px] pointer-events-none"
+//                 animate={{
+//                   opacity: [0, 0.2, 0],
+//                   transition: {
+//                     duration: 5,
+//                     repeat: Infinity,
+//                     repeatType: "reverse"
+//                   }
+//                 }}
+//               />
+//             </div>
+//           </div>
+
+//           {/* Second testimonial */}
+//           <div className="w-1/2 px-4">
+//             <div 
+//               ref={el => testimonialRefs.current[1] = el}
+//               className="bg-white rounded-[40px] px-4 sm:px-8 md:px-16 py-10 shadow-lg relative overflow-hidden h-full" 
+//               style={{ transformStyle: "preserve-3d" }}
+//             >
+//               {/* Quote mark decoration */}
+//               <motion.div
+//                 variants={quoteMarkVariants}
+//                 className="absolute text-[80px] md:text-[150px] font-serif text-orange-100 -left-2 md:-left-5 top-0 leading-none z-0"
+//               >
+//                 "
+//               </motion.div>
+
+//               <div className="flex flex-col md:flex-row items-center gap-6 relative z-10">
+//                 <div className="flex-1 text-center md:text-left">
+//                   <motion.h3
+//                     variants={quoteVariants}
+//                     className="text-[#2f2828] font-bold text-lg md:text-[26px] mb-2"
+//                   >
+//                     "{testimonials[1].quote}"
+//                   </motion.h3>
+//                   <motion.p
+//                     variants={quoteVariants}
+//                     className="md:text-lg text-base text-[#111204] my-5"
+//                   >
+//                     "{testimonials[1].description}"
+//                   </motion.p>
+//                   <motion.div variants={authorVariants} className="mb-4">
+//                     <p className="text-[#ff6600] font-bold text-xl mb-2">{testimonials[1].author}</p>
+//                     <p className="text-base text-[#111204]">{testimonials[1].position}</p>
+//                   </motion.div>
+//                   {/* Logo with same styling as first testimonial */}
+//                   <motion.div
+//                     variants={logoVariants}
+//                     className="md:mx-0 mx-auto mb-4 h-[80px] md:h-[117px] flex items-center"
+//                   >
+//                     <img
+//                       src={testimonials[1].logo}
+//                       alt="Company Logo"
+//                       className="max-h-full w-auto object-contain"
+//                     />
+//                   </motion.div>
+//                 </div>
+
+//                 <motion.div
+//                   className="w-24 h-24 sm:w-32 sm:h-32 md:w-[280px] md:h-[280px] rounded-full overflow-hidden border-4 border-white shadow-md flex-shrink-0"
+//                   variants={photoVariants}
+//                   animate={["visible", "float"]}
+//                   style={{ transformStyle: "preserve-3d" }}
+//                 >
+//                   <img
+//                     src={testimonials[1].image}
+//                     alt={testimonials[1].author}
+//                     className="w-full h-full object-cover rounded-full"
+//                   />
+//                 </motion.div>
+//               </div>
+
+//               <motion.div
+//                 className="absolute inset-0 bg-gradient-to-tr from-orange-100/10 to-transparent rounded-[40px] pointer-events-none"
+//                 animate={{
+//                   opacity: [0, 0.2, 0],
+//                   transition: {
+//                     duration: 5,
+//                     repeat: Infinity,
+//                     repeatType: "reverse"
+//                   }
+//                 }}
+//               />
+//             </div>
+//           </div>
+//         </motion.div>
+
+//         {/* Navigation arrows */}
+//         <div className="absolute top-1/2 -translate-y-1/2 w-full flex justify-between px-4 md:px-8 z-30 pointer-events-none">
+//           <button
+//             onClick={() => setActiveIndex(0)}
+//             className={`w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white/90 flex items-center justify-center shadow-md pointer-events-auto transition-opacity ${activeIndex === 0 ? 'opacity-50 cursor-default' : 'opacity-100 hover:bg-white'}`}
+//             disabled={activeIndex === 0}
+//             aria-label="Previous testimonial"
+//           >
+//             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF6600" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+//               <path d="M15 18l-6-6 6-6" />
+//             </svg>
+//           </button>
+//           <button
+//             onClick={() => setActiveIndex(1)}
+//             className={`w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white/90 flex items-center justify-center shadow-md pointer-events-auto transition-opacity ${activeIndex === 1 ? 'opacity-50 cursor-default' : 'opacity-100 hover:bg-white'}`}
+//             disabled={activeIndex === 1}
+//             aria-label="Next testimonial"
+//           >
+//             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF6600" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+//               <path d="M9 18l6-6-6-6" />
+//             </svg>
+//           </button>
+//         </div>
+//       </motion.div>
+//     </motion.div>
+//   );
+// }
+
+// export default Trusted_Brand;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 import React, { useState, useRef, useEffect } from 'react';
-import { motion, useAnimation, useInView } from 'framer-motion';
+// Added AnimatePresence to the import
+import { motion, useAnimation, useInView, AnimatePresence } from 'framer-motion';
 import TopLeft from '../../assets/12.svg';
 import TopRight from '../../assets/1.svg';
 import BottomRight from '../../assets/31.svg';
 import BottomLeft from '../../assets/3.svg';
 import reviewImage2 from '../../assets/review-image2.svg'
-import yewSeng from '../../assets/yewSeng2.svg'
-import singaporeSwimming2 from '../../assets/singaporeSwimming2.svg'
+import yewSeng from '../../assets/yewSeng22.svg'
+import singaporeSwimming2  from '../../assets/singaporeSwimming22.svg'
 
 const Trusted_Brand = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false, amount: 0.3 });
   const controls = useAnimation();
-  const [activeIndex, setActiveIndex] = useState(0);
-  const testimonialRefs = useRef([]);
-  const [slideHeight, setSlideHeight] = useState('auto');
+  
+  // State now tracks both the page index and the direction of navigation.
+  const [[page, direction], setPage] = useState([0, 0]);
 
-  // Testimonial data
+  // Testimonial data from your file [[11]]
   const testimonials = [
     {
       quote: "Custory didn't just elevate our brand. They redefined how we communicate value in our industry.",
@@ -2078,7 +2622,7 @@ const Trusted_Brand = () => {
       author: "Tan Teck Poh Edmund",
       position: "Managing Director",
       image: reviewImage2,
-      logo: singaporeSwimming2
+      logo: yewSeng
     },
     {
       quote: "Custory has been professional and comprehensive in their approach and strategy to our sales and marketing needs.",
@@ -2086,33 +2630,15 @@ const Trusted_Brand = () => {
       author: "Min Yee Koh",
       position: "General Manager",
       image: "https://custorybucket.s3.ap-southeast-1.amazonaws.com/Landing/person.png",
-      logo: yewSeng
+      logo: singaporeSwimming2
     }
   ];
 
-  // Calculate dynamic height for the slider
-  useEffect(() => {
-    const updateHeight = () => {
-      if (testimonialRefs.current[0] && testimonialRefs.current[1]) {
-        const height1 = testimonialRefs.current[0].getBoundingClientRect().height;
-        const height2 = testimonialRefs.current[1].getBoundingClientRect().height;
-        const maxHeight = Math.max(height1, height2);
-        if (maxHeight > 0) {
-          setSlideHeight(`${maxHeight}px`);
-        }
-      }
-    };
-    
-    // Initial calculation
-    updateHeight();
-    
-    // Update on resize
-    window.addEventListener('resize', updateHeight);
-    
-    return () => {
-      window.removeEventListener('resize', updateHeight);
-    };
-  }, []);
+  // Function to handle pagination and set the direction of movement.
+  const paginate = (newDirection) => {
+    const newIndex = (page + newDirection + testimonials.length) % testimonials.length;
+    setPage([newIndex, newDirection]);
+  };
 
   useEffect(() => {
     if (isInView) {
@@ -2120,7 +2646,7 @@ const Trusted_Brand = () => {
     }
   }, [isInView, controls]);
 
-  // Animation variants
+  // Animation variants from your file [[11]]
   const objectVariants = {
     initial: { opacity: 0, scale: 0.5 },
     visible: (i) => ({
@@ -2266,16 +2792,22 @@ const Trusted_Brand = () => {
     }
   };
 
-  const sliderVariants = {
-    initial: { x: 0 },
-    slide: (direction) => ({
-      x: direction === 'left' ? '0%' : '-50%',
-      transition: {
-        type: "spring",
-        stiffness: 50,
-        damping: 20,
-        duration: 0.8
-      }
+  // **IMPROVEMENT**: The variants now only define the state (the "what"), not the transition (the "how").
+  // This makes them cleaner and lets us define a single, consistent transition below.
+  const slideVariants = {
+    enter: (direction) => ({
+      x: direction > 0 ? '100%' : '-100%',
+      opacity: 0
+    }),
+    center: {
+      zIndex: 1,
+      x: '0%',
+      opacity: 1
+    },
+    exit: (direction) => ({
+      zIndex: 0,
+      x: direction < 0 ? '100%' : '-100%',
+      opacity: 0
     })
   };
 
@@ -2326,186 +2858,13 @@ const Trusted_Brand = () => {
         </motion.p>
       </div>
 
-      {/* Slider container - Now with dynamic height */}
-      <motion.div
-        className="w-full max-w-[1200px] mx-auto overflow-hidden relative z-20"
-        variants={cardVariants}
-      >
-        {/* Navigation dots */}
-        <div className="flex justify-center gap-2 mb-6">
-          {testimonials.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => setActiveIndex(i)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${activeIndex === i ? 'bg-white scale-125' : 'bg-white/50'}`}
-              aria-label={`View testimonial ${i + 1}`}
-            />
-          ))}
-        </div>
-
-        {/* Testimonial slider with dynamic height */}
-        <motion.div
-          className="flex w-[200%]"
-          variants={sliderVariants}
-          animate="slide"
-          custom={activeIndex === 0 ? 'left' : 'right'}
-          style={{ height: slideHeight, transition: "height 0.3s ease" }}
-        >
-          {/* First testimonial */}
-          <div className="w-1/2 px-4">
-            <div 
-              ref={el => testimonialRefs.current[0] = el} 
-              className="bg-white rounded-[40px] px-4 sm:px-8 md:px-10 py-10 shadow-lg relative overflow-hidden h-full"
-              style={{ transformStyle: "preserve-3d" }}
-            >
-              {/* Quote mark decoration */}
-              <motion.div
-                variants={quoteMarkVariants}
-                className="absolute text-[80px] md:text-[150px] font-serif text-orange-100 -left-2 md:-left-5 top-0 leading-none z-0"
-              >
-                "
-              </motion.div>
-
-              <div className="flex flex-col md:flex-row items-center gap-6 relative z-10">
-                <div className="flex-1 text-center md:text-left">
-                  <motion.h3
-                    variants={quoteVariants}
-                    className="text-[#2f2828] font-bold text-lg md:text-[26px] mb-2"
-                  >
-                    "{testimonials[0].quote}"
-                  </motion.h3>
-                  <motion.p
-                    variants={quoteVariants}
-                    className="md:text-lg text-base text-[#111204] my-5"
-                  >
-                    "{testimonials[0].description}"
-                  </motion.p>
-                  <motion.div variants={authorVariants} className="mb-4">
-                    <p className="text-[#ff6600] font-bold text-xl mb-2">{testimonials[0].author}</p>
-                    <p className="text-base text-[#111204]">{testimonials[0].position}</p>
-                  </motion.div>
-                  {/* Logo with proper sizing and constraints */}
-                  <motion.div
-                    variants={logoVariants}
-                    className="md:mx-0 mx-auto mb-4 h-[80px] md:h-[117px] flex items-center"
-                  >
-                    <img
-                      src={testimonials[0].logo}
-                      alt="Company Logo"
-                      className="max-h-full w-auto object-contain"
-                    />
-                  </motion.div>
-                </div>
-
-                <motion.div
-                  className="w-24 h-24 sm:w-32 sm:h-32 md:w-[280px] md:h-[280px] rounded-full overflow-hidden border-4 border-white shadow-md flex-shrink-0"
-                  variants={photoVariants}
-                  animate={["visible", "float"]}
-                  style={{ transformStyle: "preserve-3d" }}
-                >
-                  <img
-                    src={testimonials[0].image}
-                    alt={testimonials[0].author}
-                    className="w-full h-full object-cover rounded-full"
-                  />
-                </motion.div>
-              </div>
-
-              <motion.div
-                className="absolute inset-0 bg-gradient-to-tr from-orange-100/10 to-transparent rounded-[40px] pointer-events-none"
-                animate={{
-                  opacity: [0, 0.2, 0],
-                  transition: {
-                    duration: 5,
-                    repeat: Infinity,
-                    repeatType: "reverse"
-                  }
-                }}
-              />
-            </div>
-          </div>
-
-          {/* Second testimonial */}
-          <div className="w-1/2 px-4">
-            <div 
-              ref={el => testimonialRefs.current[1] = el}
-              className="bg-white rounded-[40px] px-4 sm:px-8 md:px-16 py-10 shadow-lg relative overflow-hidden h-full" 
-              style={{ transformStyle: "preserve-3d" }}
-            >
-              {/* Quote mark decoration */}
-              <motion.div
-                variants={quoteMarkVariants}
-                className="absolute text-[80px] md:text-[150px] font-serif text-orange-100 -left-2 md:-left-5 top-0 leading-none z-0"
-              >
-                "
-              </motion.div>
-
-              <div className="flex flex-col md:flex-row items-center gap-6 relative z-10">
-                <div className="flex-1 text-center md:text-left">
-                  <motion.h3
-                    variants={quoteVariants}
-                    className="text-[#2f2828] font-bold text-lg md:text-[26px] mb-2"
-                  >
-                    "{testimonials[1].quote}"
-                  </motion.h3>
-                  <motion.p
-                    variants={quoteVariants}
-                    className="md:text-lg text-base text-[#111204] my-5"
-                  >
-                    "{testimonials[1].description}"
-                  </motion.p>
-                  <motion.div variants={authorVariants} className="mb-4">
-                    <p className="text-[#ff6600] font-bold text-xl mb-2">{testimonials[1].author}</p>
-                    <p className="text-base text-[#111204]">{testimonials[1].position}</p>
-                  </motion.div>
-                  {/* Logo with same styling as first testimonial */}
-                  <motion.div
-                    variants={logoVariants}
-                    className="md:mx-0 mx-auto mb-4 h-[80px] md:h-[117px] flex items-center"
-                  >
-                    <img
-                      src={testimonials[1].logo}
-                      alt="Company Logo"
-                      className="max-h-full w-auto object-contain"
-                    />
-                  </motion.div>
-                </div>
-
-                <motion.div
-                  className="w-24 h-24 sm:w-32 sm:h-32 md:w-[280px] md:h-[280px] rounded-full overflow-hidden border-4 border-white shadow-md flex-shrink-0"
-                  variants={photoVariants}
-                  animate={["visible", "float"]}
-                  style={{ transformStyle: "preserve-3d" }}
-                >
-                  <img
-                    src={testimonials[1].image}
-                    alt={testimonials[1].author}
-                    className="w-full h-full object-cover rounded-full"
-                  />
-                </motion.div>
-              </div>
-
-              <motion.div
-                className="absolute inset-0 bg-gradient-to-tr from-orange-100/10 to-transparent rounded-[40px] pointer-events-none"
-                animate={{
-                  opacity: [0, 0.2, 0],
-                  transition: {
-                    duration: 5,
-                    repeat: Infinity,
-                    repeatType: "reverse"
-                  }
-                }}
-              />
-            </div>
-          </div>
-        </motion.div>
-
+      {/* Main container for slider and arrows */}
+      <div className="relative w-full max-w-[1200px] mx-auto">
         {/* Navigation arrows */}
-        <div className="absolute top-1/2 -translate-y-1/2 w-full flex justify-between px-4 md:px-8 z-30 pointer-events-none">
+        <div className="absolute top-1/2 -translate-y-1/2 w-full left-0 flex justify-between px-2 sm:px-6 z-50 pointer-events-none">
           <button
-            onClick={() => setActiveIndex(0)}
-            className={`w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white/90 flex items-center justify-center shadow-md pointer-events-auto transition-opacity ${activeIndex === 0 ? 'opacity-50 cursor-default' : 'opacity-100 hover:bg-white'}`}
-            disabled={activeIndex === 0}
+            onClick={() => paginate(-1)}
+            className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white/90 flex items-center justify-center shadow-md pointer-events-auto transition-opacity hover:bg-white"
             aria-label="Previous testimonial"
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF6600" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -2513,9 +2872,8 @@ const Trusted_Brand = () => {
             </svg>
           </button>
           <button
-            onClick={() => setActiveIndex(1)}
-            className={`w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white/90 flex items-center justify-center shadow-md pointer-events-auto transition-opacity ${activeIndex === 1 ? 'opacity-50 cursor-default' : 'opacity-100 hover:bg-white'}`}
-            disabled={activeIndex === 1}
+            onClick={() => paginate(1)}
+            className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white/90 flex items-center justify-center shadow-md pointer-events-auto transition-opacity hover:bg-white"
             aria-label="Next testimonial"
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF6600" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -2523,7 +2881,117 @@ const Trusted_Brand = () => {
             </svg>
           </button>
         </div>
-      </motion.div>
+
+        {/* Slider container */}
+        <motion.div
+          className="w-full max-w-[1000px] p-2 mx-auto relative z-20"
+          variants={cardVariants}
+        >
+          {/* Navigation dots */}
+          <div className="flex justify-center gap-2 mb-6">
+            {testimonials.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setPage([i, i > page ? 1 : -1])}
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${page === i ? 'bg-white scale-125' : 'bg-white/50'}`}
+                aria-label={`View testimonial ${i + 1}`}
+              />
+            ))}
+          </div>
+
+          {/* Testimonial slider with AnimatePresence */}
+          <div className="relative h-[450px] md:h-[400px] overflow-hidden">
+            <AnimatePresence initial={false} custom={direction}>
+              <motion.div
+                key={page}
+                custom={direction}
+                variants={slideVariants}
+                initial="enter"
+                animate="center"
+                exit="exit"
+                // **THE FIX IS HERE**: We define a single, robust transition for the whole component.
+                // The `x` property gets a stiff spring that settles quickly.
+                // The `opacity` gets a simple, fast fade.
+                // This ensures the animation is consistent every time.
+                transition={{
+                  x: { type: "spring", stiffness: 300, damping: 30 },
+                  opacity: { duration: 0.2 }
+                }}
+                className="absolute w-full h-full px-4"
+              >
+                {/* DYNAMIC TESTIMONIAL CARD */}
+                <div 
+                  className="bg-white rounded-[40px] px-4 sm:px-8 md:px-10 py-10 shadow-lg relative overflow-hidden h-full"
+                  style={{ transformStyle: "preserve-3d" }}
+                >
+                  <motion.div
+                    variants={quoteMarkVariants}
+                    className="absolute text-[80px] md:text-[150px] font-serif text-orange-100 -left-2 md:-left-5 top-0 leading-none z-0"
+                  >
+                    "
+                  </motion.div>
+
+                  <div className="flex flex-col md:flex-row items-center gap-6 relative z-10">
+                    <div className="flex-1 text-center md:text-left">
+                      <motion.h3
+                        variants={quoteVariants}
+                        className="text-[#2f2828] font-bold text-lg md:text-[26px] mb-2"
+                      >
+                        "{testimonials[page].quote}"
+                      </motion.h3>
+                      <motion.p
+                        variants={quoteVariants}
+                        className="text-[#111204] text-[12px] mb-4"
+                      >
+                        "{testimonials[page].description}"
+                      </motion.p>
+                      <motion.div variants={authorVariants} className="mb-4">
+                        <p className="text-[#ff6600] text-[20px] font-bold border-b-4 border-[#ff6600] inline-block">{testimonials[page].author}</p>
+                        <p className="text-base text-[#111204]">{testimonials[page].position}</p>
+                      </motion.div>
+                      <motion.div
+                        variants={logoVariants}
+                        className="md:mx-0 mx-auto h-[80px] md:h-[100px] flex items-center"
+                      >
+                        <img
+                          src={testimonials[page].logo}
+                          alt="Company Logo"
+                          className="max-h-full w-auto object-contain"
+                        />
+                      </motion.div>
+                    </div>
+
+                    <motion.div
+                      className="w-24 h-24 sm:w-32 sm:h-32 md:w-[280px] md:h-[280px] rounded-full overflow-hidden border-4 border-white shadow-md flex-shrink-0"
+                      variants={photoVariants}
+                      animate={["visible", "float"]}
+                      style={{ transformStyle: "preserve-3d" }}
+                    >
+                      <img
+                        src={testimonials[page].image}
+                        alt={testimonials[page].author}
+                        className="w-full h-full object-cover rounded-full"
+                      />
+                    </motion.div>
+                  </div>
+
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-tr from-orange-100/10 to-transparent rounded-[40px] pointer-events-none"
+                    animate={{
+                      opacity: [0, 0.2, 0],
+                      transition: {
+                        duration: 5,
+                        repeat: Infinity,
+                        repeatType: "reverse"
+                      }
+                    }}
+                  />
+                </div>
+              </motion.div>
+            </AnimatePresence>
+          </div>
+        </motion.div>
+      </div>
     </motion.div>
   );
 }

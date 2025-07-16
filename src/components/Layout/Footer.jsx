@@ -637,7 +637,8 @@ const Footer = () => {
                 </motion.a>
                 <motion.a 
                   className="sm:text-base text-sm text-[#111204] flex items-center"
-                  href="tel:+6580925936"
+                  // href="tel:+6580925936"
+                  href="http://wa.me/6580925936"
                   whileHover={{ color: "#FF6600", x: 5 }}
                 >
                   <FaWhatsapp className="inline mr-2" size={25} />

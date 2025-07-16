@@ -946,7 +946,7 @@ const FAQComponent = () => {
       </div>
 
       <div className="flex flex-col gap-4 mt-8 relative z-10">
-        <motion.div
+        {/* <motion.div
           variants={floatingForm}
           initial="rest"
           animate={["floating"]}
@@ -962,8 +962,8 @@ const FAQComponent = () => {
             onBlur={() => setIsFormFocused(false)}
           ></textarea>
         </motion.div>
-        
-        <div className="flex items-center justify-between">
+         */}
+        {/* <div className="flex items-center justify-between">
           <motion.p 
             className="text-[14px] max-w-[242px] text-black max-sm:max-w-[200px]"
             animate={{ 
@@ -988,7 +988,7 @@ const FAQComponent = () => {
             whileHover="hover"
             whileTap="tap"
           >
-            {/* Animated gradient overlay */}
+           
             <motion.div
               className="absolute inset-0 bg-gradient-to-r from-orange-400/0 via-orange-300/30 to-orange-400/0"
               animate={{
@@ -1003,7 +1003,7 @@ const FAQComponent = () => {
             />
             <span className="relative z-10">Send</span>
           </motion.button>
-        </div>
+        </div> */}
       </div>
     </div>
   );

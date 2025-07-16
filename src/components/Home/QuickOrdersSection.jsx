@@ -1067,6 +1067,9 @@
 import React, { useEffect, useState, useRef } from "react";
 import { motion, useAnimation, useInView, AnimatePresence } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import frontImage1 from '../../assets/gifs/Step1.gif'
+import frontImage2 from '../../assets/gifs/Step2.gif'
+import frontImage3 from '../../assets/gifs/Step 3.png'
 
 const B2CSection = () => {
   const navigate = useNavigate();
@@ -1086,7 +1089,8 @@ const B2CSection = () => {
   const cards = [
     {
       step: 1,
-      frontImage: 'https://custorybucket.s3.ap-southeast-1.amazonaws.com/Landing/shirt.png',
+      // frontImage: 'https://custorybucket.s3.ap-southeast-1.amazonaws.com/Landing/shirt.png',
+      frontImage: frontImage1,
       backImage: 'https://custorybucket.s3.ap-southeast-1.amazonaws.com/Landing/shirt.png',
       title: "Choose Your Product",
       description: "Curated, high-quality merch — apparel, packaging, gifts & more.",
@@ -1095,7 +1099,8 @@ const B2CSection = () => {
     },
     {
       step: 2,
-      frontImage: 'https://custorybucket.s3.ap-southeast-1.amazonaws.com/Landing/form.png',
+      // frontImage: 'https://custorybucket.s3.ap-southeast-1.amazonaws.com/Landing/form.png',
+      frontImage: frontImage2,
       backImage: 'https://custorybucket.s3.ap-southeast-1.amazonaws.com/Landing/form.png',
       title: "Get an Instant Quote in PDF",
       description: "No waiting. No delays. Transparent, competitive pricing in seconds.",
@@ -1104,7 +1109,8 @@ const B2CSection = () => {
     },
     {
       step: 3,
-      frontImage: 'https://custorybucket.s3.ap-southeast-1.amazonaws.com/Landing/image-3.png',
+      // frontImage: 'https://custorybucket.s3.ap-southeast-1.amazonaws.com/Landing/image-3.png',
+      frontImage: frontImage3,
       backImage: 'https://custorybucket.s3.ap-southeast-1.amazonaws.com/Landing/image-3.png',
       title: "Place Your Order",
       description: "No minimum order quantities. Order 1 or 10,000 — we scale with you.",
