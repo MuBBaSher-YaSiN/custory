@@ -1346,14 +1346,14 @@ const B2CSection = () => {
                 }}
               >
                 {/* Front content */}
-                <div className="relative w-full h-[240px] mb-6 shrink-0 overflow-hidden rounded-t-xl bg-white">
+                <div className="relative flex flex-col items-center w-full h-[240px] w-[240px] mb-6 shrink-0 overflow-hidden rounded-t-xl bg-white">
                   <motion.div 
                     className="absolute inset-0 bg-gradient-to-r from-orange-500 to-orange-300 opacity-10"
                   />
                   <img
                     src={card.frontImage}
                     alt={`Step ${index + 1}`}
-                    className="rounded-t-xl object-cover w-full h-full"
+                    className="object-cover h-[240px] w-[240px] "
                   />
                   
                   {/* Step number indicator */}

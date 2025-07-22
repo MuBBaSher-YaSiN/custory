@@ -23,7 +23,7 @@ const ContactInformation = () => {
       </div>
       <div className='mt-10 space-y-10'>
         {/* <ContactInfoItem icon={<BsTelephone size={22} />} className='s3' title="Call Us" value="+91 83194 75916" /> */}
-        <ContactInfoItem icon={<HiOutlineMail size={23} />} className='s4' title="Write to Us" value="admin@custory.sg" />
+        <ContactInfoItem icon={<HiOutlineMail size={23} />} className='s4' title="Write to Us" value="admin@custory.co" />
         {/* <ContactInfoItem icon={<BsTelephone size={24} />} className='s5' title="Contact Us" value={`+1 8888888888`} /> */}
       </div>
     </div>

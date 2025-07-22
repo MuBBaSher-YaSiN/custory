@@ -287,7 +287,8 @@ const Header = () => {
   // Navigation links with dynamic generation based on user role
   const navLinks = [
     { title: "Home", link: "/" },
-    { title: "Shop", link: "/upgrade" }
+    { title: "Shop", link: "/upgrade" },
+    { title: "Case Studies", link: "*" }
   ];
 
   if (isLoggedin && user?.role === 'customer') {

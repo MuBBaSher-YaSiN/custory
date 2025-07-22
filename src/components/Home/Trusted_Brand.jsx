@@ -2859,24 +2859,24 @@ const Trusted_Brand = () => {
       </div>
 
       {/* Main container for slider and arrows */}
-      <div className="relative w-full max-w-[1200px] mx-auto">
+      <div className="relative w-full  max-w-[1200px] mx-auto">
         {/* Navigation arrows */}
-        <div className="absolute top-1/2 -translate-y-1/2 w-full left-0 flex justify-between px-2 sm:px-6 z-50 pointer-events-none">
+        <div className="absolute top-1/2 -translate-y-1/2 w-full left-0 flex justify-between  z-50 pointer-events-none">
           <button
             onClick={() => paginate(-1)}
-            className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white/90 flex items-center justify-center shadow-md pointer-events-auto transition-opacity hover:bg-white"
+            className="w-8 h-8 sm:w-14 sm:h-14 mr-2  rounded-full bg-white/90 flex items-center justify-center shadow-md pointer-events-auto transition-opacity hover:bg-white"
             aria-label="Previous testimonial"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF6600" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#FF6600" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M15 18l-6-6 6-6" />
             </svg>
           </button>
           <button
             onClick={() => paginate(1)}
-            className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white/90 flex items-center justify-center shadow-md pointer-events-auto transition-opacity hover:bg-white"
+            className="w-10 h-10 sm:w-14 sm:h-14 rounded-full mr-2 bg-white/90 flex items-center justify-center shadow-md pointer-events-auto transition-opacity hover:bg-white"
             aria-label="Next testimonial"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF6600" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#FF6600" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M9 18l6-6-6-6" />
             </svg>
           </button>
@@ -2884,7 +2884,7 @@ const Trusted_Brand = () => {
 
         {/* Slider container */}
         <motion.div
-          className="w-full max-w-[1000px] p-2 mx-auto relative z-20"
+          className="w-full max-w-[823px] p-2 px-6 mx-auto relative z-20"
           variants={cardVariants}
         >
           {/* Navigation dots */}
@@ -2935,7 +2935,7 @@ const Trusted_Brand = () => {
                     <div className="flex-1 text-center md:text-left">
                       <motion.h3
                         variants={quoteVariants}
-                        className="text-[#2f2828] font-bold text-lg md:text-[26px] mb-2"
+                        className="text-[#2f2828] font-bold text-lg md:text-[20px] mb-2"
                       >
                         "{testimonials[page].quote}"
                       </motion.h3>
