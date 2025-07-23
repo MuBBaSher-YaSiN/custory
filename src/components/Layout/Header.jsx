@@ -1,190 +1,11 @@
-// import { Person, ShoppingCart } from "@mui/icons-material";
-// import { Badge, IconButton } from "@mui/material";
-// import React, { useEffect, useState } from "react";
-// import { Link, useLocation, useNavigate } from "react-router-dom";
-// import ColoredLogo from "../../assets/CustoryOrangeTransparent.png";
-// import TransParentLogo from "../../assets/custorynavbarlogotransparent.png";
-// import { Menu } from "@mui/icons-material";
-// import MenuSidebar from "../common/MenuSidebar";
-// import useAppStore from "../../hooks/useAppStore";
-// import useCart from "../../hooks/useCart";
-// import AuthModal from "../Auth/AuthModal";
-// import SideCart from "../common/SideCart";
-// const Header = () => {
-//   const [scrolling, setScrolling] = useState(false);
-//   const [headerBgColor, setHeaderBgColor] = useState(false);
-//   const path = useLocation().pathname;
-//   const [isMenuOpen, setIsMenuOpen] = useState(false);
-//   const setShowCart = useAppStore((state) => state.setShowCart);
-//   const {totalItems : totalCartItems} = useCart();
-//   const setShowAuthModal = useAppStore(state=>state.setShowAuthModal);
-//   const navigate = useNavigate();
-//   const isLoggedin = useAppStore(state=>state.isLoggedin);
-//   const setView = useAppStore((state)=> state.setView);
-//   const user = useAppStore(state=>state.user);
-
-//   const style =
-//     path !== "/"
-//       ? "sticky bg-gradient-to-b from-[#FF6600] via-[39%] via-[#FF711B] to-[#FFB669] text-white lg:rounded-b-md"
-//       : scrolling
-//       ? `fixed ${headerBgColor && 'bg-white'} bg-transparent backdrop-blur-none lg:rounded-b-md transition-all`
-//       : "bg-transparent backdrop-blur-none sm:backdrop-blur-lg max-sm:bg-transparent max-sm:text-black transition-all fixed";
-
-
-//   useEffect(() => {
-//     if (path === '/') {
-//       setScrolling(true);
-//     }else {
-//       setScrolling(false);
-//     }
-
-//     const handleScroll = () => {
-//       if (window.scrollY > 100 && path === '/') {
-//         setHeaderBgColor(true);
-//       } else {
-//         setHeaderBgColor(false);
-//       }
-//     };
-//     window.addEventListener("scroll", handleScroll);
-//     return () => {
-//       window.addEventListener("scroll", handleScroll);
-//     };
-//   }, []);
-
-//   return (
-//     <>
-//       <AuthModal />
-//       <SideCart />
-//       <MenuSidebar isOpen={isMenuOpen} setIsOpen={setIsMenuOpen} />
-//       {/* Navbar image and two icons */}
-//       <div className={`w-full py-2 px-10 max-lg:py-4 max-xl:px-10 max-lg:px-7 max-xs:px-4 max-content-width flex items-center justify-between top-0 z-50 ${style}`}>
-//         <div className="flex items-center">
-//           <img src={scrolling ? ColoredLogo : TransParentLogo} onContextMenu={(e) => e.preventDefault()} onClick={()=>navigate('/')} className="sm:w-[250px] w-[180px] cursor-pointer" />
-//         </div>
-//         <div className="flex items-start gap-8 text-base font-semibold min-w-[250px] max-lg:hidden">
-//           {[{ title: "Home", link: "/" },{ title: "Shop", link: "/products" }].map((item,index)=> <Link key={index} to={item?.link} onClick={()=>window.scrollTo(0, 0)}>{item?.title}</Link>)}
-//           {(isLoggedin && (user?.role === 'customer')) && <Link to='/account/mygifts'>My Orders</Link>}
-//           {(user?.role === 'admin') && <Link to='/adminPortal'>Custory Admin</Link>}
-//           {(user?.role === 'supplier') && <Link to='/sellerPortal'>Seller Portal</Link>}
-//         </div>
-//         <div className="flex items-center gap-5 max-xs:gap-2 hidden max-lg:flex">
-//           <IconButton onClick={() => { setShowCart(true) }}
-//             type="text"
-//             size="small"
-//             className={`${scrolling ? 'text-black' : 'text-white'}`}
-//           >
-//             <Badge badgeContent={isLoggedin ? totalCartItems : null} color="warning" sx={{ color: "#black" }}>
-//               <ShoppingCart sx={{ fontSize: 28 }} className={`${scrolling ? " text-[#FF6600]":"max-sm:text-gray-300 text-white"}`}/>
-//             </Badge>
-//           </IconButton>
-//           <IconButton onClick={() => setIsMenuOpen(true)}>
-//             <Menu sx={{ fontSize: 36}} className={`${scrolling ? " text-[#FF6600]":"max-sm:text-gray-300 text-white"}`} />
-//           </IconButton>
-//         </div>
-//         <div className="flex items-center gap-6 max-lg:hidden">
-//           <IconButton
-//             type="text"
-//             onClick={()=>{
-//               if(isLoggedin){
-//                 navigate('/account');
-//               } else {
-//                 setShowAuthModal(true);
-//                 setView('LOGIN');
-//               }
-//             }}
-//             size="medium"
-//             sx={{ color: `${scrolling ? "#FF6600":"white"}` }}
-//           >
-//             <Person className="lg:hidden" />
-//           </IconButton>
-//           <IconButton
-//             onClick={() => {
-//               setShowCart(true);
-//             }}
-//             type="text"
-//             size="medium"
-//             sx={{ color: `${scrolling ? "#FF6600":"white"}` }}
-//           >
-//             <Badge badgeContent={isLoggedin ? totalCartItems : null} color="warning">
-//               <ShoppingCart />
-//             </Badge>
-//           </IconButton>
-//         </div>
-//       </div>
-//     </>
-//   );
-// };
-
-// export default Header;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 import { Person, ShoppingCart, Menu, Close, KeyboardArrowDown } from "@mui/icons-material";
 import { Badge, IconButton, Tooltip } from "@mui/material";
 import React, { useEffect, useState, useRef, useCallback } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import ColoredLogo from "../../assets/CustoryOrangeTransparent.png";
-import TransParentLogo from "../../assets/custorynavbarlogotransparent.png";
+// import TransParentLogo from "../../assets/custorynavbarlogotransparent.png";
+import TransParentLogo from "../../assets/custory-logo.png";
 import useAppStore from "../../hooks/useAppStore";
 import useCart from "../../hooks/useCart";
 import AuthModal from "../Auth/AuthModal";
@@ -264,7 +85,7 @@ const Header = () => {
       setScrolling(false);
     }
 
-    setActiveLink(path);
+    // setActiveLink(path);
 
     let ticking = false;
     const onScroll = () => {
@@ -288,7 +109,7 @@ const Header = () => {
   const navLinks = [
     { title: "Home", link: "/" },
     { title: "Shop", link: "/upgrade" },
-    { title: "Case Studies", link: "*" }
+    { title: "Case Studies", link: "/upgrade" }
   ];
 
   if (isLoggedin && user?.role === 'customer') {
@@ -396,7 +217,7 @@ const Header = () => {
   // Handler functions
   const handleNavClick = (navPath) => {
     window.scrollTo(0, 0);
-    setActiveLink(navPath);
+    // setActiveLink(navPath);
   };
 
   const handleCartClick = () => {
@@ -460,7 +281,7 @@ const Header = () => {
               <Link
                 to={item.link}
                 onClick={() => handleNavClick(item.link)}
-                className="block relative"
+                className="block relative no-underline hover:no-underline"
                 aria-current={activeLink === item.link ? "page" : undefined}
               >
                 {item.title}

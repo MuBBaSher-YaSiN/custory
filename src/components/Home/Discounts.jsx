@@ -1,147 +1,3 @@
-// import React, { useState, useEffect } from "react";
-// import { Swiper, SwiperSlide } from "swiper/react";
-// import "swiper/css";
-// import "swiper/css/pagination";
-// import "swiper/css/navigation";
-// import { Autoplay } from "swiper";
-// import useDiscount from "../../hooks/useDiscount";
-// import { DiscountDialogModel } from "../common/DialogModal";
-
-// const Discounts = () => {
-//   const { discounts, displayDiscountInfo } = useDiscount();
-//   const [modalOpen, setModalOpen] = useState(true);
-
-//   useEffect(() => {
-//     if (sessionStorage.getItem("ModalOpened")) {
-//       setModalOpen(false);
-//     }
-//   }, []);
-
-//   const enabledDiscounts = discounts
-//   ?.filter((item) => {
-//     const { expired } = displayDiscountInfo(item);
-//     return item.isEnable && !expired;
-//   })
-//   .map((item) => {
-//     const { daysLeft } = displayDiscountInfo(item);
-//     return { ...item, daysLeft };
-//   });
-
-//   return (
-//     <>
-//       {/* <Swiper
-//         modules={[Autoplay]}
-//         spaceBetween={30}
-//         slidesPerView={
-//           enabledDiscounts?.length >= 3 ? 3 : enabledDiscounts?.length
-//         }
-//         autoplay={{ delay: 3000, disableOnInteraction: false }}
-//         loop={enabledDiscounts?.length > 3}
-//       >
-//         {enabledDiscounts?.length ? enabledDiscounts.map((item, index) => {
-//               const { percentage, minimumSpend, type, newUserDisc } = item;
-//               return (
-//                 <SwiperSlide className="relative whitespace-nowrap flex justify-center items-center px-4 py-4 lg:py-4 max-sm:pl-1.5 min-sm:after:content-[''] after:absolute after:right-[-20px] after:w-[1px] after:h-[80px] after:bg-gray-300 " key={index}>
-//                   <div>
-//                     <span className="sm:text-4xl lg:text-6xl font-bold text-xl">
-//                       {percentage}% <span className="text-xl">Off</span>
-//                     </span>
-//                     <p className="sm:text-lg font-semibold text-[9px]">
-//                       {newUserDisc ? 'ONLY ON FIRST ORDER' : `ON ORDER ${type === "price" ? `$${minimumSpend}+` : `${minimumSpend}+ QTY`}`}
-//                     </p>
-//                   </div>
-//                 </SwiperSlide>
-//               );
-//             })
-//           : null}
-//       </Swiper>
-//       {enabledDiscounts.length ? ( <DiscountDialogModel enabledDiscounts={enabledDiscounts} modalOpen={modalOpen} setModalOpen={setModalOpen} />
-//       ) : null} */}
-//       <div className="flex flex-wrap justify-around items-center gap-8 text-white font-semibold text-sm sm:text-base lg:min-h-[114px] bg-gradient-to-b from-[#FF6600] via-[39%] via-[#FF711B] to-[#FFB669] w-[90%]  rounded-xl py-4 px-6 mx-auto my-10">
-//         <div className="flex items-center gap-2">
-//           <img src={'https://custorybucket.s3.ap-southeast-1.amazonaws.com/Landing/Logomark.png'} alt="Layers" className="sm:h-11 h-8 sm:w-11 w-8" />
-//           <span className="sm:text-2xl text-lg font-bold">Layers</span>
-//         </div>
-//         <div className="flex items-center gap-2">
-//           <img src={'https://custorybucket.s3.ap-southeast-1.amazonaws.com/Landing/Logomark-1.png'} alt="Quotient" className="sm:h-11 h-8 sm:w-11 w-8" />
-//           <span className="sm:text-2xl text-lg font-bold">Quotient</span>
-//         </div>
-//         <div className="flex items-center gap-2">
-//           <img src={'https://custorybucket.s3.ap-southeast-1.amazonaws.com/Landing/Logomark-2.png'} alt="Circoles" className="sm:h-11 h-8 sm:w-11 w-8" />
-//           <span className="sm:text-2xl text-lg font-bold">Circoles</span>
-//         </div>
-//         <div className="flex items-center gap-2">
-//           <img src={'https://custorybucket.s3.ap-southeast-1.amazonaws.com/Landing/Logomark-4.png'} alt="Hourglass" className="sm:h-11 h-8 sm:w-11 w-8" />
-//           <span className="sm:text-2xl text-lg font-bold">Hourglass</span>
-//         </div>
-//         <div className="flex items-center gap-2">
-//           <img src={'https://custorybucket.s3.ap-southeast-1.amazonaws.com/Landing/Logomark-3.png'} alt="Command+R" className="sm:h-11 h-8 sm:w-11 w-8" />
-//           <span className="sm:text-2xl text-lg font-bold">Command+R</span>
-//         </div>
-//       </div>
-//     </>
-//   );
-// };
-
-// export default Discounts;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 import React, { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { motion, useAnimation } from "framer-motion";
@@ -152,10 +8,10 @@ import { Autoplay } from "swiper";
 import useDiscount from "../../hooks/useDiscount";
 import { DiscountDialogModel } from "../common/DialogModal";
 
-import logoo from '../../assets/singamporLogo.svg'
-import singaporeSwimming from '../../assets/singaporeSwimming.svg'
-import yewSeng from '../../assets/yewSeng.svg'
-import grarage from '../../assets/grarage.svg'
+import logoo from '../../assets/singamporLogo.png'
+import singaporeSwimming from '../../assets/singaporeSwimming.png'
+import yewSeng from '../../assets/yewSeng.png'
+import grarage from '../../assets/grarage.png'
 
 const Discounts = () => {
   const { discounts, displayDiscountInfo } = useDiscount();
@@ -342,28 +198,20 @@ const Discounts = () => {
   const logos = [
     {
       // name: "Layers",
-      // src: "https://custorybucket.s3.ap-southeast-1.amazonaws.com/Landing/Logomark.png"
       src: logoo
     },
     {
       // name: "Quotient",
       src: singaporeSwimming
-      // src: "https://custorybucket.s3.ap-southeast-1.amazonaws.com/Landing/Logomark-1.png"
     },
     {
       // name: "Circoles",
       src: yewSeng
-      // src: "https://custorybucket.s3.ap-southeast-1.amazonaws.com/Landing/Logomark-2.png"
     },
     {
       // name: "Hourglass",
       src: grarage
-      // src: "https://custorybucket.s3.ap-southeast-1.amazonaws.com/Landing/Logomark-4.png"
     },
-    // {
-    //   // name: "Command+R",
-    //   src: "https://custorybucket.s3.ap-southeast-1.amazonaws.com/Landing/Logomark-3.png"
-    // }
   ];
 
   return (
@@ -409,7 +257,7 @@ const Discounts = () => {
                 filter: "drop-shadow(0px 3px 5px rgba(0,0,0,0.15))"
               }}
             >
-             <img src={logo.src} className=""/>
+             <img src={logo.src} className="w-48" />
             </motion.div>
             
             <motion.span 

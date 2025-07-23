@@ -14,7 +14,7 @@ const TermsAndConditions = () => {
             className="text-blue-600 underline"
             href="/"
           >
-            custory.sg
+            custory.co
           </a>{" "}
           website (“Website” or “Service”) and any of its related products and
           services (collectively, “Services”). This Agreement is legally binding
@@ -126,7 +126,7 @@ const TermsAndConditions = () => {
           <div className="">
           <div className="text-xl font-semibold">Contacting us</div>
           <div className="mt-5">If you have any questions, concerns, or complaints regarding this Agreement, we encourage you to contact us using the details below : </div>
-          <div className="mt-4 text-blue-700 underline"><a href="mailto:support@custory.sg">admin@custory.sg</a></div>
+          <div className="mt-4 text-blue-700 underline"><a href="mailto:support@custory.co">admin@custory.co</a></div>
           </div>
         </div>
       </div>
