@@ -183,7 +183,7 @@ const Home = () => {
           ))}
         </div>
       </div> */}
-      <QuickOrdersSection/>
+      <QuickOrdersSection />
 
       <div className="mt-12">
         <Trusted_Brand />
