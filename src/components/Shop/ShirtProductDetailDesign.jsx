@@ -160,6 +160,7 @@ const ShirtProductDetailDesign = (props) => {
   const setFrontUploadedImage = useAppStore(state => state.setFrontUploadedImage);
   const setBackUploadedImage = useAppStore(state => state.setBackUploadedImage);
 
+<<<<<<< HEAD
   /**
    * open custom editor
    */
@@ -192,6 +193,8 @@ const ShirtProductDetailDesign = (props) => {
   //     setHasUnsavedChanges(true);
   //   }
   // };
+=======
+>>>>>>> origin/main
 
   useEffect(()=>{
     const editorProductId = localStorage.getItem("editorProduct");
@@ -361,6 +364,7 @@ const ShirtProductDetailDesign = (props) => {
             &nbsp;<span className="text-[12px] font-normal underline text-custoryPrimary text-end leading-none w-fit cursor-pointer" onClick={()=>setExampleModal({open:true, typeName:'Design Submission Guide'})}>Example</span>
           </p>
         </p>
+<<<<<<< HEAD
         {/* <div className="mr-1 flex items-center">
           <button
             onClick={handleUploadDesign}
@@ -393,6 +397,8 @@ const ShirtProductDetailDesign = (props) => {
             Reset
           </button>
         </div> */}
+=======
+>>>>>>> origin/main
 
         <UploadDesign selectedColor={selectedColor} productData={productData} setIsCustomUpload={setIsCustomUpload}
           isFrontSide = {isFrontSide}

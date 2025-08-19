@@ -2,7 +2,11 @@ import React, { useEffect } from "react";
 import { TiUser } from "react-icons/ti";
 import { MdArrowForwardIos } from "react-icons/md";
 import { AiTwotoneStar } from "react-icons/ai";
+<<<<<<< HEAD
 import { RiLogoutCircleLine, RiDiscountPercentFill, RiDraftFill } from "react-icons/ri";
+=======
+import { RiLogoutCircleLine, RiPercentFill, RiDraftFill } from "react-icons/ri";
+>>>>>>> origin/main
 import { useNavigate } from "react-router-dom";
 import useAppStore from "../../hooks/useAppStore";
 import useAuth, { APP_AUTH_KEY, useFetchUser } from "../../hooks/useAuth";
@@ -110,7 +114,11 @@ const AccountSidebar = () => {
               onClick={() => navigate("/account/discounts")}
               title={"Discounts"}
               icon={
+<<<<<<< HEAD
                 <RiDiscountPercentFill className="text-gray-600" size={22} />
+=======
+                <RiPercentFill className="text-gray-600" size={22} />
+>>>>>>> origin/main
               }
             />
             <hr />

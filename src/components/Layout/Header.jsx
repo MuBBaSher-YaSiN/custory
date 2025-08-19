@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // import { Person, ShoppingCart, Menu, Close, KeyboardArrowDown } from "@mui/icons-material";
 // import { Badge, IconButton, Tooltip } from "@mui/material";
 // import React, { useEffect, useState, useRef, useCallback } from "react";
@@ -449,6 +450,8 @@
 
 
 
+=======
+>>>>>>> origin/main
 import { Person, ShoppingCart, Menu, Close, KeyboardArrowDown } from "@mui/icons-material";
 import { Badge, IconButton, Tooltip } from "@mui/material";
 import React, { useEffect, useState, useRef, useCallback } from "react";

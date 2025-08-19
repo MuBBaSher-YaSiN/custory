@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // import React from "react";
 // import { motion } from "framer-motion";
 // import logo from '../assets/CustoryOrangeTransparent.png'
@@ -161,6 +162,8 @@
 
 // export default UpgradePage;
 
+=======
+>>>>>>> origin/main
 import React from "react";
 import { motion } from "framer-motion";
 import Header from "../components/Layout/Header";

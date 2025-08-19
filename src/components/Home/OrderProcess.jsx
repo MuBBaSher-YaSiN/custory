@@ -30,6 +30,7 @@ const FAQComponent = () => {
     // {heading: "How fast can I receive my custom products?", answer: "For orders placed through our Shop page without custom design requests, we offer two delivery options: Express Shipping (7–14 business days) and Standard Shipping (up to 4 weeks)."},
     // {heading: "How do I get started?", answer: "Whether you're a business or an individual, getting started is easy — book a call with our team for tailored B2B support, or start designing directly on our Shop page for fast, self-service ordering."},
 
+<<<<<<< HEAD
     {heading: "What is Custory and what does it do?", answer: "Custory is a creative studio that helps businesses design and deliver better brand experiences through strategy, storytelling, and merchandise. Our name stands for “custom story” - design-led solutions that drive real results."},
     {heading: "Do you work with both businesses and individuals?", answer: "Yes. We support brands, agencies, and creators alike — whether you’re launching a campaign or customizing merch for fun, Custory has you covered."},
 
@@ -38,6 +39,16 @@ const FAQComponent = () => {
     {heading: "How fast can I receive my custom products?", answer: "For orders placed through our Shop page without custom design requests, we offer two delivery options: Express Shipping (7–14 business days) and Standard Shipping (up to 4 weeks). "},
 
     {heading: "How do I get started?", answer: "Whether you're a business or an individual, getting started is easy — book a call with our team for tailored B2B support, or start designing directly on our Shop page for fast, self-service ordering."},
+=======
+    {heading: "What is Custory and what does it do?", answer: "Custory is a creative studio that helps businesses design and deliver better brand experiences through strategy, storytelling, and merchandise. Our name stands for “custom story” and reflects our focus design-led solutions that drive real results."},
+    {heading: "Do you work with both businesses and individuals?", answer: "We support brands, agencies, and creators alike. Whether you’re launching a campaign or customizing merch just for fun, Custory has you covered."},
+
+    {heading: "What makes Custory merchandise different from other merchandisers?", answer: "We offer end-to-end creative services with no minimum order quantity, instant quotations, and a seamless process from branding to delivery, all tailored to your goals."},
+
+    {heading: "How fast can I receive my custom products?", answer: "For orders placed through our Shop page without custom design requests, we offer two delivery options: Express Shipping (7–14 business days) and Standard Shipping (up to 4 weeks). "},
+
+    {heading: "How do I get started?", answer: "Whether you're a business or an individual, getting started is easy. Book a call with our team for tailored B2B support, or start designing directly on our Shop page for fast, self-service ordering."},
+>>>>>>> origin/main
   ];
 
   // Floating animation variants

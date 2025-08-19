@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // import React, { useEffect, useState, useRef } from "react";
 // import { motion, useAnimation, useInView } from "framer-motion";
 // import { useNavigate } from "react-router-dom";
@@ -1064,6 +1065,8 @@
 
 
 
+=======
+>>>>>>> origin/main
 import React, { useEffect, useState, useRef } from "react";
 import { motion, useAnimation, useInView, AnimatePresence } from "framer-motion";
 import { useNavigate } from "react-router-dom";

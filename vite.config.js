@@ -5,6 +5,7 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   build: {
+<<<<<<< HEAD
     // Increase chunk size warning limit (optional)
     // chunkSizeWarningLimit: 4000, // Set chunk size to 1MB (optional)
     // base: import.meta.env.VITE_API_URL,
@@ -21,3 +22,12 @@ export default defineConfig({
     }
   }
 });
+=======
+    rollupOptions: {
+      external: []
+    }
+  }
+})
+
+
+>>>>>>> origin/main

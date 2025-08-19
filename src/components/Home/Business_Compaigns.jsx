@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // import React from 'react'
 // import { useNavigate } from 'react-router-dom';
 
@@ -1119,6 +1120,8 @@
 
 
 
+=======
+>>>>>>> origin/main
 import React, { useEffect, useState, useRef, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion, useAnimation, useInView, AnimatePresence } from 'framer-motion';
@@ -1378,6 +1381,7 @@ const Business_Compaigns = () => {
     }
   };
 
+<<<<<<< HEAD
   // Images array
   // const images = [
   //   'https://custorybucket.s3.ap-southeast-1.amazonaws.com/Landing/image-1.png',
@@ -1407,6 +1411,8 @@ const Business_Compaigns = () => {
   //   image11,
 
   // ];
+=======
+>>>>>>> origin/main
   const images = [
     
        {src:image1,

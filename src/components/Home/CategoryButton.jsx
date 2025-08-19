@@ -30,6 +30,7 @@ const CategoryButton = () => {
     await containerControls.start("visible");
     await buttonControls.start("visible");
   };
+<<<<<<< HEAD
 
   // Set up Intersection Observer to detect when component enters viewport
   // useEffect(() => {
@@ -80,6 +81,8 @@ const CategoryButton = () => {
   //     buttonControls.stop();
   //   };
   // }, []);
+=======
+>>>>>>> origin/main
   
   useEffect(() => {
   const observer = new IntersectionObserver(

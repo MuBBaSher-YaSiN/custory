@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // import React, { useEffect, useRef, useState } from "react";
 // import { createStore } from "polotno/model/store";
 // import { Editor } from "../../components/Editor/Editor";
@@ -99,6 +100,8 @@
 // };
 
 // export default DraftEditor;
+=======
+>>>>>>> origin/main
 import React, { useEffect, useRef, useState } from "react";
 import { createStore } from "polotno/model/store";
 import { Editor } from "./Editor";
