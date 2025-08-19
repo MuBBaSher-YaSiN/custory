@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { motion, useAnimationControls } from "framer-motion";
+import AnimatedButton from "../Layout/AnimatedButton";
 
 const CategoryButton = () => {
   // Animation controls for triggering animations manually
@@ -110,24 +111,9 @@ const CategoryButton = () => {
       animate={containerControls}
     >
       {categories.map((category, index) => (
-        <motion.button 
-          key={index}
-          className="min-w-[150px] max-sm:flex-grow bg-gradient-to-b from-[#FF6600] via-[39%] via-[#FF711B] to-[#FFB669] text-white cursor-pointer font-medium py-3 px-8 rounded-md hover:bg-orange-600 transition"
-          style={{ 
-            originY: 0.5,
-            perspective: "1000px",
-            transformStyle: "preserve-3d",
-            minWidth: category.length * 5 + 80 + "px"
-          }}
-          variants={buttonVariants}
-          custom={index}
-          initial="hidden"
-          animate={buttonControls}
-          whileHover="hover"
-          whileTap="tap"
-        >
+       <AnimatedButton >
           {category}
-        </motion.button>
+       </AnimatedButton>
       ))}
     </motion.div>
   );

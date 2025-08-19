@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import frontImage1 from '../../assets/gifs/Step1.gif'
 import frontImage2 from '../../assets/gifs/Step2.gif'
 import frontImage3 from '../../assets/gifs/Step 3.png'
+import AnimatedButton from "../Layout/AnimatedButton";
 
 const B2CSection = () => {
   const navigate = useNavigate();
@@ -221,18 +222,8 @@ const B2CSection = () => {
       
       {/* Shop Button */}
       <motion.div className="sm:mb-16 mb-12 relative z-10">
-        <motion.button
-          onClick={() => navigate("/upgrade")}
-          className="relative bg-orange-500 text-white py-4 px-12 rounded-md font-semibold text-sm overflow-hidden group"
-          whileHover={{ 
-            scale: 1.03,
-            boxShadow: "0 10px 20px -5px rgba(249, 115, 22, 0.3)"
-          }}
-          whileTap={{ scale: 0.98 }}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ type: "spring", stiffness: 400, damping: 15 }}
-        >
+        <AnimatedButton onClick={() => navigate("/upgrade")}>
+     
           <span className="relative z-10 flex items-center justify-center gap-2 group-hover:gap-3 transition-all duration-300">
             Shop Now
             <svg 
@@ -245,7 +236,7 @@ const B2CSection = () => {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
             </svg>
           </span>
-        </motion.button>
+        </AnimatedButton>
       </motion.div>
 
       <div className="flex items-start flex-wrap justify-center gap-8 relative z-10">

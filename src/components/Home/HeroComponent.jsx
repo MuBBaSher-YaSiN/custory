@@ -10,6 +10,7 @@ import {
   useTexture,
 } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
+import AnimatedButton from "../Layout/AnimatedButton";
 
 const HeroComponent = ({ position = [0, 0, 2.5], fov = 25 }) => {
   const transition = { ease: "linear", duration: 1.5 };
@@ -314,30 +315,15 @@ const HeroComponent = ({ position = [0, 0, 2.5], fov = 25 }) => {
         
         <div className="flex justify-center gap-4 flex-wrap relative max-lg:mt-16">
           <div className="relative gap-8 flex flex-wrap justify-center">
-            <motion.button 
-              variants={buttonFloat(0)}
-              initial="initial"
-              animate={["animate", "floating"]}
-              whileHover="hover"
-              whileTap="tap"
-              className="bg-[#FF6600] text-white cursor-pointer font-medium py-[18px] px-6 rounded-md text-base hover:bg-orange-600 transition max-sm:flex-grow z-10"
-            >
-              <a href="https://calendly.com/admin-custory/30min" target="_blank" className="no-underline text-white hover:no-underline">
-                Book a Call with Our Team
-              </a>
-            </motion.button>
-            
-            <motion.button
-              variants={buttonFloat(1)}
-              initial="initial"
-              animate={["animate", "floating"]}
-              whileHover="hover"
-              whileTap="tap"
-              onClick={() => navigate("/upgrade")}
-              className="bg-[#FF6600] text-white cursor-pointer font-medium py-[18px] px-16 rounded-md text-base hover:bg-orange-600 transition max-sm:flex-grow z-10"
-            >
-              Shop Now
-            </motion.button>
+           <AnimatedButton
+           className="no-underline hover:no-underline focus:no-underline"
+            href="https://calendly.com/admin-custory/30min">
+    Book a Call with Our Team
+  </AnimatedButton>
+
+  <AnimatedButton onClick={() => navigate("/upgrade")}>
+    Shop Now
+  </AnimatedButton>
             
             <div className="absolute right-[-8.5%] bottom-[84%] w-8 h-8 rounded-full lg:block hidden">
               <motion.img 

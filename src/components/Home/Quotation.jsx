@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import { motion, useAnimation, useInView, AnimatePresence } from "framer-motion";
 import { useNavigate,Link } from "react-router-dom";
+import AnimatedButton from "../Layout/AnimatedButton";
 
 const Quotation = () => {
   const navigate = useNavigate();
@@ -238,32 +239,18 @@ const Quotation = () => {
         animate="animate"
         whileHover="hover"
       >
-        <motion.button 
-          className="bg-[#FF6600] text-white px-[14px] py-2 rounded-md text-base h-[56px] max-sm:flex-grow relative overflow-hidden group"
-          variants={buttonVariants}
-          custom={0}
-          animate={prefersReducedMotion ? "animate" : ["animate", "float"]}
-          whileHover="hover"
-          whileTap="tap"
-          onHoverStart={() => setHoveredButton(0)}
-          onHoverEnd={() => setHoveredButton(null)}
-        >
-          {!prefersReducedMotion && (
-            <motion.span 
-              className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
-              initial={{ x: "-100%" }}
-              animate={hoveredButton === 0 ? { x: "100%" } : { x: "-100%" }}
-              transition={{ duration: 0.8 }}
-              style={{ pointerEvents: "none" }}
-            />
-          )}
-          <motion.span className="relative z-10 flex items-center justify-center gap-2">
+       <AnimatedButton 
+  hoverBg="#ffffff"   
+  hoverText="#FF6600" 
+>
+         
+          <span className="relative z-10  flex items-center justify-center gap-2">
              <a href="https://calendly.com/admin-custory/30min" target="_blank" className="no-underline hover:no-underline">
               Book a Call with Our Team
             </a>
             
-            {hoveredButton === 0 && (
-              <motion.svg 
+          
+              <svg 
                 xmlns="http://www.w3.org/2000/svg" 
                 className="h-4 w-4" 
                 fill="none" 
@@ -274,12 +261,38 @@ const Quotation = () => {
                 transition={{ duration: 0.3 }}
               >
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </motion.svg>
-            )}
-          </motion.span>
-        </motion.button>
+              </svg>
+          
+          </span>
+       </AnimatedButton>
+        <AnimatedButton 
+  hoverBg="#ffffff"   
+  hoverText="#FF6600" 
+>
+         
+          <span className="relative z-10  flex items-center justify-center gap-2">
+             <a href="https://calendly.com/admin-custory/30min" target="_blank" className="no-underline hover:no-underline">
+              Shop Now
+            </a>
+            
+          
+              <svg 
+                xmlns="http://www.w3.org/2000/svg" 
+                className="h-4 w-4" 
+                fill="none" 
+                viewBox="0 0 24 24" 
+                stroke="currentColor"
+                initial={{ x: -10, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.3 }}
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+          
+          </span>
+       </AnimatedButton>
         
-        <motion.button 
+        {/* <motion.button 
           onClick={() => navigate('/upgrade')}
           className="bg-[#FF6600] text-white px-[14px] py-2 rounded-md text-base h-[56px] sm:w-[195px] w-auto max-sm:flex-grow relative overflow-hidden group"
           variants={buttonVariants}
@@ -316,7 +329,7 @@ const Quotation = () => {
               </motion.svg>
             )}
           </motion.span>
-        </motion.button>
+        </motion.button> */}
       </motion.div>
       
       {/* Optional particle burst effect on button hover */}
