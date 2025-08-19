@@ -110,11 +110,7 @@ const AccountSidebar = () => {
               onClick={() => navigate("/account/discounts")}
               title={"Discounts"}
               icon={
-<<<<<<< HEAD
-                <RiDiscountPercentFill className="text-gray-600" size={22} />
-=======
                 <RiPercentFill className="text-gray-600" size={22} />
->>>>>>> origin/main
               }
             />
             <hr />
