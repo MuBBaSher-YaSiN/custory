@@ -61,19 +61,11 @@ const MenuSidebar = ({ isOpen, setIsOpen }) => {
         </div>
         <div className="mt-0 py-4">    
         <MenuItem link={'/'} icon={<Home sx={{fontSize : {xs : 25, sm : 28}}}/>} text='Home'/>      
-<<<<<<< HEAD
-        <MenuItem link={'/products'} icon={<ShoppingBasket sx={{fontSize : {xs : 25, sm : 28}}}/>} text='Shop'/>
-        {(isLoggedin && (user?.role === 'customer')) && <MenuItem link={'/account/mygifts'} icon={<FormatListBulletedIcon sx={{fontSize : {xs : 25, sm : 28}}}/>} text='My Orders'/>}
-        {(user?.role === 'admin') && <MenuItem link={'/adminPortal'} icon={<AccountCircle sx={{fontSize : {xs : 25, sm : 28}}}/>} text='Custory Admin'/>}
-        {(user?.role === 'supplier') && <MenuItem link={'/sellerPortal'} icon={<AccountCircle sx={{fontSize : {xs : 25, sm : 28}}}/>} text='Seller Portal'/>}     
-        <MenuItem link={'/account'} icon={<AccountCircle sx={{fontSize : {xs : 25, sm : 28}}}/>} text='My Account'/>       
-=======
         <MenuItem link={'/construction'} icon={<ShoppingBasket sx={{fontSize : {xs : 25, sm : 28}}}/>} text='Shop'/>
         {(isLoggedin && (user?.role === 'customer')) && <MenuItem link={'/account/mygifts'} icon={<FormatListBulletedIcon sx={{fontSize : {xs : 25, sm : 28}}}/>} text='My Orders'/>}
         {(user?.role === 'admin') && <MenuItem link={'/adminPortal'} icon={<AccountCircle sx={{fontSize : {xs : 25, sm : 28}}}/>} text='Custory Admin'/>}
         {(user?.role === 'supplier') && <MenuItem link={'/sellerPortal'} icon={<AccountCircle sx={{fontSize : {xs : 25, sm : 28}}}/>} text='Seller Portal'/>}     
         <MenuItem link={'/construction'} icon={<AccountCircle sx={{fontSize : {xs : 25, sm : 28}}}/>} text='My Account'/>       
->>>>>>> origin/main
         </div>
       </div>
     </Drawer>

@@ -160,41 +160,6 @@ const ShirtProductDetailDesign = (props) => {
   const setFrontUploadedImage = useAppStore(state => state.setFrontUploadedImage);
   const setBackUploadedImage = useAppStore(state => state.setBackUploadedImage);
 
-<<<<<<< HEAD
-  /**
-   * open custom editor
-   */
-  // const customEditor = async () => {
-  //   const updateFrontPromise = new Promise(resolve => {
-  //     setCurrentFront(`https://custorybucket.s3.ap-southeast-1.amazonaws.com/Products/${productData.id}/${selectedColor}/front.jpg`);
-  //     resolve();
-  //   });
-  //   const updateBackPromise = new Promise(resolve => {
-  //     setCurrentBack(`https://custorybucket.s3.ap-southeast-1.amazonaws.com/Products/${productData.id}/${selectedColor}/back.jpg`);
-  //     resolve();
-  //   });
-  //   const updateEditorProduct = new Promise(resolve => {
-  //     setCurrentEditorProduct(productData.id);
-  //     resolve();
-  //   });
-  //   await Promise.all([updateFrontPromise, updateBackPromise, updateEditorProduct]);
-  //   window.location.href = '/editor';
-  // }
-
-  // const handleEditor = () => {
-  //   if (!isLoggedin) {
-  //     toast.error('Please login to use our custom editor');
-  //     return;
-  //   }
-  //   if (frontUploadedImage || backUploadedImage) {
-  //     setDialogModalOpen({open: true, text: 'Custom Editor'});
-  //   }else{
-  //     customEditor();
-  //     setHasUnsavedChanges(true);
-  //   }
-  // };
-=======
->>>>>>> origin/main
 
   useEffect(()=>{
     const editorProductId = localStorage.getItem("editorProduct");
@@ -364,41 +329,6 @@ const ShirtProductDetailDesign = (props) => {
             &nbsp;<span className="text-[12px] font-normal underline text-custoryPrimary text-end leading-none w-fit cursor-pointer" onClick={()=>setExampleModal({open:true, typeName:'Design Submission Guide'})}>Example</span>
           </p>
         </p>
-<<<<<<< HEAD
-        {/* <div className="mr-1 flex items-center">
-          <button
-            onClick={handleUploadDesign}
-            className="ml-2 text-gray-500 border rounded border-black px-2 py-1 text-sm text-center"
-          >
-            Upload your own design
-          </button>
-          <IoIosInformationCircleOutline
-            data-tooltip-html="
-          <div>
-              <h4>Instructions:</h4>
-              <ol>
-                <li>Download our product template from the provided link.</li>
-                <li>Ensure your design follows our product template guidelines.</li>
-                <li>Upload your finalized design files using the options below.</li>
-              </ol>
-            </div>"
-            data-tooltip-id="my-tooltip-2"
-            className="ml-2 cursor-pointer"
-          ></IoIosInformationCircleOutline>
-          <ReactTooltip id="my-tooltip-2" place="top" />
-          <div className="font-bold text-sm px-4">OR</div>
-          <span className="ml-2 text-white bg-custoryPrimary border rounded border-black px-2 py-1 text-sm text-center">
-            <button onClick={handleEditor}>Use our custom editor</button>
-          </span>
-          <button
-            onClick={resetImages}
-            className="ml-2 text-blue-400 px-2 py-1 text-sm text-center"
-          >
-            Reset
-          </button>
-        </div> */}
-=======
->>>>>>> origin/main
 
         <UploadDesign selectedColor={selectedColor} productData={productData} setIsCustomUpload={setIsCustomUpload}
           isFrontSide = {isFrontSide}

@@ -109,11 +109,7 @@ const Home = () => {
       </div>
       <div className="text-center px-4 sm:pt-12 py-0 pb-0">
         <h2 className="text-2xl sm:text-5xl md:text-[54px] font-bold leading-tight text-black max-w-4xl mx-auto">
-<<<<<<< HEAD
-          We believe a brand’s story should be seen, felt, and remembered
-=======
           We believe a brand’s story should be seen, felt, and remembered.
->>>>>>> origin/main
         </h2>
         <p className="sm:my-20 my-10 text-gray-600 text-base sm:text-xl">
           We can help you with<sub>…</sub>
@@ -187,11 +183,7 @@ const Home = () => {
           ))}
         </div>
       </div> */}
-<<<<<<< HEAD
-      <QuickOrdersSection/>
-=======
       <QuickOrdersSection />
->>>>>>> origin/main
 
       <div className="mt-12">
         <Trusted_Brand />

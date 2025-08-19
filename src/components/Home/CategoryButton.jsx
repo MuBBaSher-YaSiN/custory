@@ -30,59 +30,6 @@ const CategoryButton = () => {
     await containerControls.start("visible");
     await buttonControls.start("visible");
   };
-<<<<<<< HEAD
-
-  // Set up Intersection Observer to detect when component enters viewport
-  // useEffect(() => {
-  //   // Initial animation on first render
-  //   runAnimationSequence();
-    
-  //   // Create intersection observer
-  //   const observer = new IntersectionObserver(
-  //     (entries) => {
-  //       const entry = entries[0];
-        
-  //       if (!entry.isIntersecting) {
-  //         // Component has scrolled out of view
-  //         wasOutOfView.current = true;
-  //       } 
-  //       else if (entry.isIntersecting && wasOutOfView.current) {
-  //         // Component has returned to view after being out of view
-  //         wasOutOfView.current = false;
-          
-  //         // Reset and restart animations
-  //         containerControls.start("hidden")
-  //           .then(() => {
-  //             buttonControls.start("hidden")
-  //               .then(() => {
-  //                 // Small delay before restarting animations
-  //                 setTimeout(() => {
-  //                   runAnimationSequence();
-  //                 }, 100);
-  //               });
-  //           });
-  //       }
-  //     },
-  //     {
-  //       threshold: 0.25, // Trigger when 25% of element is visible
-  //       rootMargin: "-100px 0px" // Slightly adjust trigger point
-  //     }
-  //   );
-    
-  //   // Start observing our component
-  //   if (containerRef.current) {
-  //     observer.observe(containerRef.current);
-  //   }
-    
-  //   // Cleanup
-  //   return () => {
-  //     observer.disconnect();
-  //     containerControls.stop();
-  //     buttonControls.stop();
-  //   };
-  // }, []);
-=======
->>>>>>> origin/main
   
   useEffect(() => {
   const observer = new IntersectionObserver(
