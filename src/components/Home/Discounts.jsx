@@ -8,10 +8,12 @@ import { Autoplay } from "swiper";
 import useDiscount from "../../hooks/useDiscount";
 import { DiscountDialogModel } from "../common/DialogModal";
 
-import logoo from '../../assets/singamporLogo.png'
-import singaporeSwimming from '../../assets/singaporeSwimming.png'
-import yewSeng from '../../assets/yewSeng.png'
-import grarage from '../../assets/grarage.png'
+import logoo from "../../assets/singamporLogo.png";
+import singaporeSwimming from "../../assets/singaporeSwimming.png";
+import yewSeng from "../../assets/yewSeng.png";
+import grarage from "../../assets/grarage.png";
+import logo1 from "../../assets/additional-logo1.png";
+import logo2 from "../../assets/additional-logo2.png";
 
 const Discounts = () => {
   const { discounts, displayDiscountInfo } = useDiscount();
@@ -29,17 +31,17 @@ const Discounts = () => {
   // Start animation sequence and set interval for repeating
   useEffect(() => {
     controls.start("animate");
-    
+
     // Reset animation every 20 seconds
     const interval = setInterval(() => {
       controls.start("exit").then(() => {
-        setAnimationKey(prev => prev + 1);
+        setAnimationKey((prev) => prev + 1);
         setTimeout(() => {
           controls.start("animate");
         }, 500);
       });
     }, 20000);
-    
+
     return () => clearInterval(interval);
   }, [controls]);
 
@@ -55,7 +57,7 @@ const Discounts = () => {
 
   // Container animation variants
   const containerVariants = {
-    initial: { 
+    initial: {
       opacity: 0.9,
     },
     animate: {
@@ -63,8 +65,8 @@ const Discounts = () => {
       transition: {
         duration: 0.8,
         when: "beforeChildren",
-        staggerChildren: 0.15
-      }
+        staggerChildren: 0.15,
+      },
     },
     exit: {
       opacity: 0.5,
@@ -72,73 +74,73 @@ const Discounts = () => {
         duration: 0.5,
         when: "afterChildren",
         staggerChildren: 0.05,
-        staggerDirection: -1
-      }
-    }
+        staggerDirection: -1,
+      },
+    },
   };
 
   // Logo item falling animation variants
   const logoVariants = {
-    initial: (i) => ({ 
+    initial: (i) => ({
       y: -300, // Start far above the viewport
-      x: (i % 2 === 0) ? -20 : 20, // Slight x offset based on position
+      x: i % 2 === 0 ? -20 : 20, // Slight x offset based on position
       opacity: 0,
       rotate: Math.random() * 20 - 10, // Random initial rotation
-      scale: 0.7
+      scale: 0.7,
     }),
-    animate: (i) => ({ 
-      y: 0, 
+    animate: (i) => ({
+      y: 0,
       x: 0,
       opacity: 1,
       rotate: 0,
       scale: 1,
       transition: {
-        y: { 
-          type: "spring", 
-          stiffness: 80 + (i * 5), 
-          damping: 9 + (i * 1),
-          mass: 1 + (i * 0.2), // Heavier items fall differently
+        y: {
+          type: "spring",
+          stiffness: 80 + i * 5,
+          damping: 9 + i * 1,
+          mass: 1 + i * 0.2, // Heavier items fall differently
           velocity: -100,
-          duration: 1.3 + (i * 0.1)
+          duration: 1.3 + i * 0.1,
         },
         opacity: { duration: 0.4 },
         rotate: {
           type: "spring",
           stiffness: 50,
-          damping: 8
+          damping: 8,
         },
-        scale: { 
-          type: "spring", 
+        scale: {
+          type: "spring",
           stiffness: 300,
           damping: 15,
-          delay: 0.2
-        }
-      }
+          delay: 0.2,
+        },
+      },
     }),
-    exit: (i) => ({ 
+    exit: (i) => ({
       y: 200, // Exit downward
       opacity: 0,
       rotate: Math.random() * 20 - 10,
       transition: {
         duration: 0.7,
         ease: "easeIn",
-        delay: i * 0.04
-      }
+        delay: i * 0.04,
+      },
     }),
     bounce: (i) => ({
       y: [0, -15, 0],
       transition: {
         repeat: Infinity,
-        repeatDelay: 6 + (i * 0.5),
+        repeatDelay: 6 + i * 0.5,
         duration: 1.2,
-        ease: "easeOut"
-      }
+        ease: "easeOut",
+      },
     }),
     hover: {
       y: -8,
       scale: 1.08,
-      transition: { type: "spring", stiffness: 400, damping: 10 }
-    }
+      transition: { type: "spring", stiffness: 400, damping: 10 },
+    },
   };
 
   const imageVariants = {
@@ -150,38 +152,38 @@ const Discounts = () => {
       transition: {
         type: "spring",
         stiffness: 80,
-        damping: 10
-      }
+        damping: 10,
+      },
     },
     bounce: (i) => ({
       rotateY: [0, 10, -5, 0],
       transition: {
         repeat: Infinity,
-        repeatDelay: 4 + (i * 1),
+        repeatDelay: 4 + i * 1,
         duration: 2,
-        ease: "easeInOut"
-      }
+        ease: "easeInOut",
+      },
     }),
     hover: {
       rotate: 0,
       scale: 1.15,
-      transition: { type: "spring", stiffness: 300 }
-    }
+      transition: { type: "spring", stiffness: 300 },
+    },
   };
 
   // Shadow animation that follows the logo
   const shadowVariants = {
     initial: {
       opacity: 0,
-      scale: 0.5
+      scale: 0.5,
     },
     animate: {
       opacity: 0.2,
       scale: 1,
       transition: {
         delay: 0.2,
-        duration: 0.5
-      }
+        duration: 0.5,
+      },
     },
     bounce: {
       opacity: [0.2, 0.15, 0.2],
@@ -190,47 +192,55 @@ const Discounts = () => {
         repeat: Infinity,
         repeatDelay: 6,
         duration: 1.2,
-        ease: "easeOut"
-      }
-    }
+        ease: "easeOut",
+      },
+    },
   };
 
   const logos = [
     {
       // name: "Layers",
-      src: logoo
+      src: logoo,
     },
     {
       // name: "Quotient",
-      src: singaporeSwimming
+      src: singaporeSwimming,
     },
     {
       // name: "Circoles",
-      src: yewSeng
+      src: yewSeng,
     },
     {
       // name: "Hourglass",
-      src: grarage
+      src: grarage,
+    },
+    {
+      // name: "Hourglass",
+      src: logo1,
+    },
+    {
+      // name: "Hourglass",
+      src: logo2,
     },
   ];
 
   return (
     <>
-      <motion.div 
+      <motion.div
         key={animationKey}
         ref={containerRef}
         variants={containerVariants}
         initial="initial"
         animate={controls}
         className="flex flex-wrap justify-around items-center gap-8 text-white font-semibold text-sm sm:text-base lg:min-h-[114px] bg-gradient-to-b from-[#FF6600] via-[39%] via-[#FF711B] to-[#FFB669] w-[90%] rounded-xl px-6 mx-auto my-10"
-        style={{ 
+        style={{
           boxShadow: "0 10px 30px rgba(255, 102, 0, 0.2)",
           perspective: "1000px",
-          overflow: "hidden"
+          overflow: "hidden",
         }}
       >
         {logos.map((logo, index) => (
-          <motion.div 
+          <motion.div
             key={index}
             className="flex items-center gap-2 relative"
             variants={logoVariants}
@@ -239,13 +249,13 @@ const Discounts = () => {
             animate={["animate", "bounce"]}
           >
             {/* Shadow element that follows the logo */}
-            <motion.div 
+            <motion.div
               className="absolute bg-black rounded-full blur-sm"
               variants={shadowVariants}
               animate={["animate", "bounce"]}
               custom={index}
             />
-            
+
             {/* Logo image with bounce effect */}
             <motion.div
               variants={imageVariants}
@@ -253,24 +263,24 @@ const Discounts = () => {
               whileHover="hover"
               custom={index}
               className="flex items-center justify-center"
-              style={{ 
-                filter: "drop-shadow(0px 3px 5px rgba(0,0,0,0.15))"
+              style={{
+                filter: "drop-shadow(0px 3px 5px rgba(0,0,0,0.15))",
               }}
             >
-             <img src={logo.src} className="w-48" />
+              <img src={logo.src} className="w-48 sm:w-32" />
             </motion.div>
-            
-            <motion.span 
+
+            <motion.span
               className="sm:text-2xl text-lg font-bold"
               animate={{
                 y: [0, -5, 0],
                 transition: {
                   repeat: Infinity,
-                  repeatDelay: 6 + (index * 0.5),
+                  repeatDelay: 6 + index * 0.5,
                   duration: 1.2,
                   ease: "easeOut",
-                  delay: 0.1
-                }
+                  delay: 0.1,
+                },
               }}
             >
               {logo.name}

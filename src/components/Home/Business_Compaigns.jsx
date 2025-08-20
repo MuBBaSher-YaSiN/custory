@@ -282,22 +282,22 @@ const Business_Compaigns = () => {
   };
 
   const images = [
-    { src: image1, lable: "🧠 Brand Strategy & Positioning" },
-    { src: image2, lable: "📊 Branding Deck" },
-    { src: image3, lable: "✒️ Logo Design" },
-    { src: image4, lable: "📦 Packaging Design" },
-    { src: image5, lable: "🚀 Compaign Branding & Direction" },
-    { src: image6, lable: "🚀 Compaign Branding & Direction" },
-    { src: image7, lable: "👕 Merchandise Production" },
-    { src: image8, lable: "👕 Merchandise Production" },
-    { src: image9, lable: "🖨️ Print Collateral" },
-    { src: image10, lable: "🎨 Artist Collaboration" },
-    { src: image11, lable: "📸 Content Creation" },
+    { src: image1, lable: "🛍️ Merchandise Production & Design" },
+    { src: image2, lable: "📸 Content Creation & 🎨 Artist Collaborations" },
+    { src: image3, lable: "🛍️ Merchandise Production & Design" },
+    { src: image4, lable: "🚀 Campaign Branding & Direction" },
+    { src: image5, lable: " 📦 Packaging Design" },
+    { src: image6, lable: "✒️ Logo Design" },
+    { src: image7, lable: "🚀 Campaign Branding & Direction" },
+    { src: image8, lable: "🖨️ Print & Collateral Design" },
+    { src: image9, lable: "🛍️ Merchandise Production & Design" },
+    { src: image10, lable: "📸 Content Creation & 🎨 Artist Collaborations" },
+    { src: image11, lable: "🛍️ Merchandise Production & Design" },
     { src: image12, lable: "📊 Branding Deck" },
-    { src: image13, lable: "📊 Branding Deck" },
-    { src: image14, lable: "📊 Branding Deck" },
-    { src: image15, lable: "📊 Branding Deck" },
-    { src: image16, lable: "📊 Branding Deck" },
+    { src: image13, lable: "🛍️ Merchandise Production & Design" },
+    { src: image14, lable: "🛍️ Merchandise Production & Design" },
+    { src: image15, lable: "🚀 Campaign Branding & Direction" },
+    { src: image16, lable: "📦 Packaging Design" },
     { src: image17, lable: "📊 Branding Deck" },
   ];
 
@@ -416,11 +416,7 @@ const Business_Compaigns = () => {
                          : ""
                      }
                      ${
-                       index === 4 ||
-                       index === 11 ||
-                       index === 13 ||
-                       index === 14 ||
-                       index === 16
+                       index === 4 || index === 11 || index === 13
                          ? "h-72"
                          : " "
                      }
