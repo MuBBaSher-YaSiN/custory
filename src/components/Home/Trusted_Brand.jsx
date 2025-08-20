@@ -1,50 +1,61 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { motion, useAnimation, useInView, AnimatePresence } from 'framer-motion';
-import TopLeft from '../../assets/12.svg';
-import TopRight from '../../assets/1.svg';
-import BottomRight from '../../assets/31.svg';
-import BottomLeft from '../../assets/3.svg';
-import reviewImage2 from '../../assets/review-image2.svg'
-import yewSeng from '../../assets/yewSeng22.svg'
-import singaporeSwimming2  from '../../assets/singaporeSwimming22.svg'
+import React, { useState, useRef, useEffect } from "react";
+import {
+  motion,
+  useAnimation,
+  useInView,
+  AnimatePresence,
+} from "framer-motion";
+import TopLeft from "../../assets/12.svg";
+import TopRight from "../../assets/1.svg";
+import BottomRight from "../../assets/31.svg";
+import BottomLeft from "../../assets/3.svg";
+import reviewImage2 from "../../assets/review-image2.svg";
+import yewSeng from "../../assets/yewSeng22.svg";
+import singaporeSwimming2 from "../../assets/singaporeSwimming22.svg";
 
 const Trusted_Brand = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false, amount: 0.3 });
   const controls = useAnimation();
-  
+
   // State now tracks both the page index and the direction of navigation.
   const [[page, direction], setPage] = useState([0, 0]);
 
   // Testimonial data from your file [[11]]
   const testimonials = [
     {
-      quote: "Custory didn't just elevate our brand. They redefined how we communicate value in our industry.",
-      description: "Samantha and the team approached our brand strategy with business-first thinking. From a website that speaks clearly to clients, to premium gifting and merchandise that our clients and team love - everything Custory delivered was intentional. They helped us stand out in a traditionally conservative industry.",
+      quote:
+        "Custory didn't just elevate our brand. They redefined how we communicate value in our industry.",
+      description:
+        "Samantha and the team approached our brand strategy with business-first thinking. From a website that speaks clearly to clients, to premium gifting and merchandise that our clients and team love - everything Custory delivered was intentional. They helped us stand out in a traditionally conservative industry.",
       author: "Tan Teck Poh Edmund",
       position: "Managing Director",
       image: reviewImage2,
-      logo: yewSeng
+      logo: yewSeng,
     },
     {
-      quote: "Custory has been professional and comprehensive in their approach and strategy to our sales and marketing needs.",
-      description: "Looking forward to continued close collaborations to achieve the results we are after!",
+      quote:
+        "Custory has been professional and comprehensive in their approach and strategy to our sales and marketing needs.",
+      description:
+        "Looking forward to continued close collaborations to achieve the results we are after!",
       author: "Min Yee Koh",
       position: "General Manager",
-      image: "https://custorybucket.s3.ap-southeast-1.amazonaws.com/Landing/person.png",
-      logo: singaporeSwimming2
-    }
+      image:
+        "https://custorybucket.s3.ap-southeast-1.amazonaws.com/Landing/person.png",
+      logo: singaporeSwimming2,
+    },
   ];
 
   // Function to handle pagination and set the direction of movement.
   const paginate = (newDirection) => {
-    const newIndex = (page + newDirection + testimonials.length) % testimonials.length;
+    const newIndex =
+      (page + newDirection + testimonials.length) % testimonials.length;
     setPage([newIndex, newDirection]);
   };
 
   useEffect(() => {
     if (isInView) {
-      controls.start('visible');
+      controls.start("visible");
     }
   }, [isInView, controls]);
 
@@ -61,9 +72,9 @@ const Trusted_Brand = () => {
         repeat: Infinity,
         repeatType: "reverse",
         ease: "easeInOut",
-        delay: i * 0.6
-      }
-    })
+        delay: i * 0.6,
+      },
+    }),
   };
 
   const headingVariants = {
@@ -75,9 +86,9 @@ const Trusted_Brand = () => {
         type: "spring",
         stiffness: 50,
         damping: 12,
-        duration: 0.8
-      }
-    }
+        duration: 0.8,
+      },
+    },
   };
 
   const paragraphVariants = {
@@ -90,16 +101,16 @@ const Trusted_Brand = () => {
         stiffness: 50,
         damping: 12,
         delay: 0.2,
-        duration: 0.8
-      }
-    }
+        duration: 0.8,
+      },
+    },
   };
 
   const cardVariants = {
-    initial: { 
-      y: 100, 
-      opacity: 0, 
-      rotateX: 10 
+    initial: {
+      y: 100,
+      opacity: 0,
+      rotateX: 10,
     },
     visible: {
       y: 0,
@@ -112,9 +123,9 @@ const Trusted_Brand = () => {
         delay: 0.4,
         duration: 1,
         when: "beforeChildren",
-        staggerChildren: 0.2
-      }
-    }
+        staggerChildren: 0.2,
+      },
+    },
   };
 
   const logoVariants = {
@@ -127,9 +138,9 @@ const Trusted_Brand = () => {
         type: "spring",
         stiffness: 100,
         damping: 10,
-        duration: 0.6
-      }
-    }
+        duration: 0.6,
+      },
+    },
   };
 
   const quoteVariants = {
@@ -139,9 +150,9 @@ const Trusted_Brand = () => {
       y: 0,
       transition: {
         duration: 0.8,
-        delay: 0.3
-      }
-    }
+        delay: 0.3,
+      },
+    },
   };
 
   const authorVariants = {
@@ -151,9 +162,9 @@ const Trusted_Brand = () => {
       scale: 1,
       transition: {
         duration: 0.6,
-        delay: 0.6
-      }
-    }
+        delay: 0.6,
+      },
+    },
   };
 
   const photoVariants = {
@@ -167,8 +178,8 @@ const Trusted_Brand = () => {
         stiffness: 60,
         damping: 12,
         duration: 1,
-        delay: 0.7
-      }
+        delay: 0.7,
+      },
     },
     float: {
       y: [0, -10, 0],
@@ -177,9 +188,9 @@ const Trusted_Brand = () => {
         duration: 6,
         repeat: Infinity,
         repeatType: "reverse",
-        ease: "easeInOut"
-      }
-    }
+        ease: "easeInOut",
+      },
+    },
   };
 
   const quoteMarkVariants = {
@@ -189,31 +200,31 @@ const Trusted_Brand = () => {
       scale: [0, 1.2, 1],
       transition: {
         duration: 0.8,
-        delay: 0.4
-      }
-    }
+        delay: 0.4,
+      },
+    },
   };
 
   // **IMPROVEMENT**: The variants now only define the state (the "what"), not the transition (the "how").
   // This makes them cleaner and lets us define a single, consistent transition below.
   const slideVariants = {
     enter: (direction) => ({
-      x: direction > 0 ? '100%' : '-100%',
-      opacity: 0
+      x: direction > 0 ? "100%" : "-100%",
+      opacity: 0,
     }),
     center: {
       zIndex: 1,
-      x: '0%',
-      opacity: 1
+      x: "0%",
+      opacity: 1,
     },
     exit: (direction) => ({
       zIndex: 0,
-      x: direction < 0 ? '100%' : '-100%',
-      opacity: 0
-    })
+      x: direction < 0 ? "100%" : "-100%",
+      opacity: 0,
+    }),
   };
 
-  const shapes = ['★', '●', '■', '▲', '◆', '✦'];
+  const shapes = ["★", "●", "■", "▲", "◆", "✦"];
 
   return (
     <motion.div
@@ -234,7 +245,7 @@ const Trusted_Brand = () => {
               fontSize: `${30 + Math.random() * 60}px`,
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
-              zIndex: 0
+              zIndex: 0,
             }}
             variants={objectVariants}
             custom={i}
@@ -256,7 +267,8 @@ const Trusted_Brand = () => {
           className="text-sm md:text-[20px] md:leading-[30px] sm:my-16 my-10 max-w-[460px] mx-auto"
           variants={paragraphVariants}
         >
-          Trusted by leading brands, we hold ourselves accountable to every promise we make.
+          Trusted by leading brands, we hold ourselves accountable to every
+          promise we make.
         </motion.p>
       </div>
 
@@ -269,7 +281,17 @@ const Trusted_Brand = () => {
             className="w-8 h-8 sm:w-14 sm:h-14 mr-2  rounded-full bg-white/90 flex items-center justify-center shadow-md pointer-events-auto transition-opacity hover:bg-white"
             aria-label="Previous testimonial"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#FF6600" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="30"
+              height="30"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#FF6600"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
               <path d="M15 18l-6-6 6-6" />
             </svg>
           </button>
@@ -278,7 +300,17 @@ const Trusted_Brand = () => {
             className="w-10 h-10 sm:w-14 sm:h-14 rounded-full ml-2 bg-white/90 flex items-center justify-center shadow-md pointer-events-auto transition-opacity hover:bg-white"
             aria-label="Next testimonial"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#FF6600" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="30"
+              height="30"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#FF6600"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
               <path d="M9 18l6-6-6-6" />
             </svg>
           </button>
@@ -295,7 +327,9 @@ const Trusted_Brand = () => {
               <button
                 key={i}
                 onClick={() => setPage([i, i > page ? 1 : -1])}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${page === i ? 'bg-white scale-125' : 'bg-white/50'}`}
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  page === i ? "bg-white scale-125" : "bg-white/50"
+                }`}
                 aria-label={`View testimonial ${i + 1}`}
               />
             ))}
@@ -317,12 +351,12 @@ const Trusted_Brand = () => {
                 // This ensures the animation is consistent every time.
                 transition={{
                   x: { type: "spring", stiffness: 300, damping: 30 },
-                  opacity: { duration: 0.2 }
+                  opacity: { duration: 0.2 },
                 }}
                 className="absolute w-full h-full px-4"
               >
                 {/* DYNAMIC TESTIMONIAL CARD */}
-                <div 
+                <div
                   className="bg-white rounded-[40px] px-4 sm:px-8 md:px-10 py-10 shadow-lg relative overflow-hidden h-full"
                   style={{ transformStyle: "preserve-3d" }}
                 >
@@ -347,13 +381,19 @@ const Trusted_Brand = () => {
                       >
                         "{testimonials[page].description}"
                       </motion.p>
-                      <motion.div variants={authorVariants} className="mb-4">
-                        {/* <p className="text-[#ff6600] text-[20px] font-bold border-b-2 border-[#ff6600] inline-block">{testimonials[page].author}</p>
-                        <p className="text-base text-[#111204]">{testimonials[page].position}</p> */}
-                        <p className="text-[20px] font-bold border-b-2 border-[#ff6600] inline-block bg-gradient-to-b from-[#FF6600] via-[#FF711B] to-[#FFB669] bg-clip-text text-transparent">
+                      <motion.div variants={authorVariants} className="mb-4 md:mb-0">
+                        {/* <p className="text-[#ff6600] text-[20px] font-bold border-b-2 border-[#ff6600] inline-block">{testimonials[page].author}</p> */}
+                        <p
+                          className="text-[20px] leading font-outfit font-bold border-b-2 border-[#FFB669] inline-block 
+             bg-gradient-to-b from-[#FFB669] via-[#FF711B] to-[#FFB669] 
+             bg-clip-text text-transparent"
+                        >
                           {testimonials[page].author}
                         </p>
 
+                        <p className="text-base font-outfit text-[#111204]">
+                          {testimonials[page].position}
+                        </p>
                       </motion.div>
                       <motion.div
                         variants={logoVariants}
@@ -388,8 +428,8 @@ const Trusted_Brand = () => {
                       transition: {
                         duration: 5,
                         repeat: Infinity,
-                        repeatType: "reverse"
-                      }
+                        repeatType: "reverse",
+                      },
                     }}
                   />
                 </div>
@@ -400,6 +440,6 @@ const Trusted_Brand = () => {
       </div>
     </motion.div>
   );
-}
+};
 
 export default Trusted_Brand;

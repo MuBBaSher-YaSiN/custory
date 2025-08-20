@@ -185,7 +185,7 @@ const ShirtProductDetail = () => {
     } catch (error) {
       console.error('Error adding product to the cart:', error);
       if (error?.response?.data?.message) {
-        toast.error(error.response.data.message);
+        toast.error(error.response.data.message || 'Something went wrong!');
       } else {
         toast.error('Failed to add product to the cart. Please try again later.');
       }

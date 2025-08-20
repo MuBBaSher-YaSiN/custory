@@ -5,12 +5,21 @@ import image1 from '../../assets/drive-download/1.png'
 import image2 from '../../assets/drive-download/2.png'
 import image3 from '../../assets/drive-download/3.png'
 import image4 from '../../assets/drive-download/4.png'
-import image5 from '../../assets/drive-download/5.gif'
-import image6 from '../../assets/drive-download/6.png'
-import image7 from '../../assets/drive-download/7.gif'
+import image5 from '../../assets/drive-download/5.png'
+import image6 from '../../assets/drive-download/6.gif'
+import image7 from '../../assets/drive-download/7.png'
+import image8 from '../../assets/drive-download/8.png'
 import image9 from '../../assets/drive-download/9.png'
 import image10 from '../../assets/drive-download/10.png'
-import image11 from '../../assets/drive-download/11.gif'
+import image11 from '../../assets/drive-download/11.png'
+import image12 from  '../../assets/drive-download/12.png'
+import image13 from  '../../assets/drive-download/13.gif'
+import image14 from  '../../assets/drive-download/14.png'
+import image15 from  '../../assets/drive-download/15.png'
+import image16 from  '../../assets/drive-download/16.png'
+import image17 from  '../../assets/drive-download/17.png'
+
+
 
 const Business_Compaigns = () => {
   const navigate = useNavigate();
@@ -258,14 +267,14 @@ const Business_Compaigns = () => {
   };
 
   const images = [
-    
-       {src:image1,
+     
+        {src:image1,
         lable:"🧠 Brand Strategy & Positioning",
        },
        {src:image2,
         lable:"📊 Branding Deck",
        },
-       {src:image3,
+        {src:image3,
         lable: "✒️ Logo Design",
        },
        {src:image4,
@@ -280,6 +289,9 @@ const Business_Compaigns = () => {
        {src:image7,
         lable:"👕 Merchandise Production",
        },
+       {src:image8,
+        lable:"👕 Merchandise Production",
+       },
        {src:image9,
         lable: "🖨️ Print Collateral",
        },
@@ -289,9 +301,24 @@ const Business_Compaigns = () => {
        {src:image11,
         lable:"📸 Content Creation",
        },
-    
-    
-
+       {src:image12,
+        lable:"📊 Branding Deck",
+       },
+       {src:image13,
+        lable:"📊 Branding Deck",
+       },
+       {src:image14,
+        lable:"📊 Branding Deck",
+       },
+       {src:image15,
+        lable:"📊 Branding Deck",
+       },
+       {src:image16,
+        lable:"📊 Branding Deck",
+       },
+       {src:image17,
+        lable:"📊 Branding Deck",
+       },
   ];
 
 
@@ -380,7 +407,7 @@ const Business_Compaigns = () => {
         </div>
 
         {/* Image grid with enhanced wave animations */}
-        <div className="columns-2 md:columns-4 gap-[24px] space-y-[26px] relative">
+        <div className="columns-2 md:columns-4 gap-[24px] space-y-[60px] relative">
           {images.map((items, index) => (
             <motion.div
               key={index}
@@ -389,9 +416,9 @@ const Business_Compaigns = () => {
               custom={index}
               initial="initial"
               animate={prefersReducedMotion ? "animate" : ["animate", "float"]}
-              whileHover="hover"
-              onHoverStart={() => setHoveredIndex(index)}
-              onHoverEnd={() => setHoveredIndex(null)}
+              // whileHover="hover"
+              // onHoverStart={() => setHoveredIndex(index)}
+              // onHoverEnd={() => setHoveredIndex(null)}
             >
               {/* 3D card effect wrapper */}
               <motion.div
