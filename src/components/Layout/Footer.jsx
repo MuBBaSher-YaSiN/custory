@@ -8,7 +8,7 @@ import { FiPhone, FiArrowUpRight } from "react-icons/fi";
 
 import { FaWhatsapp } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
-import Logo from "../../assets/CustoryBanner.png";
+import Logo from "../../assets/custory-logo.png";
 import RemindMeModal from "../common/RemindMeModal";
 
 
