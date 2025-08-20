@@ -311,7 +311,7 @@ const Footer = () => {
                 </a>
               </motion.div>
               <motion.p 
-                className="sm:text-base text-sm text-[#111204] max-w-xs max-sm:max-w-full max-sm:text-center"
+                className="sm:text-base font-outfit text-sm text-[#111204] max-w-xs max-sm:max-w-full max-sm:text-center"
                 variants={itemVariants}
               >
                 Custory – a leading creative studio specializing in transforming brand stories into memorable, high-impact experiences for businesses of all sizes.

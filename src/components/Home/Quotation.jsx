@@ -197,7 +197,7 @@ const Quotation = () => {
       
       {/* Animated heading with word-by-word reveal */}
       <motion.h2 
-        className="text-2xl md:text-[64px] font-bold text-white sm:leading-[85px] leading-[55px] mb-4 relative z-10"
+        className="text-2xl md:text-[64px] font-outfit font-bold text-white sm:leading-[85px] leading-[55px] mb-4 relative z-10"
         variants={headingVariants}
         initial="initial"
         animate={controls}

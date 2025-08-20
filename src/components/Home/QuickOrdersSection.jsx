@@ -203,7 +203,7 @@ const B2CSection = () => {
       ))}
       
       <motion.h2 
-        className="text-2xl md:text-5xl font-bold text-gray-900 sm:my-16 my-12 relative z-10"
+        className="text-2xl font-outfit md:text-5xl font-bold text-gray-900 sm:my-16 my-12 relative z-10"
         variants={headingVariants}
       >
         {/* For Quick Orders & Customization (B2C) */}

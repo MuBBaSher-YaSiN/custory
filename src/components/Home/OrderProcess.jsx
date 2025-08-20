@@ -146,7 +146,7 @@ const FAQComponent = () => {
   };
 
   return (
-    <div className="md:w-[550px] w-full mx-auto max-md:px-8 relative">
+    <div className="md:w-[550px] font-outfit w-full mx-auto max-md:px-8 relative">
       {/* Floating background decorations */}
       {[...Array(8)].map((_, i) => (
         <motion.div

@@ -359,7 +359,7 @@ const Business_Compaigns = () => {
         ))
       )}
 
-      <div className="max-w-full mx-auto text-center relative z-10">
+      <div className="max-w-full font-outfit mx-auto text-center relative z-10">
         <motion.h1
           className="text-2xl md:text-5xl font-bold mb-4"
           variants={headingVariants}

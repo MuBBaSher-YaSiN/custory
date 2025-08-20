@@ -108,7 +108,7 @@ const Home = () => {
         <Discounts />
       </div>
       <div className="text-center px-4 sm:pt-12 py-0 pb-0">
-        <h2 className="text-2xl sm:text-5xl md:text-[54px] font-bold leading-tight text-black max-w-4xl mx-auto">
+        <h2 className="text-2xl font-outfit sm:text-5xl md:text-[54px] font-bold leading-tight text-black max-w-4xl mx-auto">
           We believe a brand’s story should be seen, felt, and remembered.
         </h2>
         <p className="sm:my-20 my-10 text-gray-600 text-base sm:text-xl">

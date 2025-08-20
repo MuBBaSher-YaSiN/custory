@@ -229,7 +229,7 @@ const Trusted_Brand = () => {
   return (
     <motion.div
       ref={ref}
-      className="bg-gradient-to-b from-[#FF6600] via-[39%] via-[#FF711B] to-[#FFB669] sm:py-16 py-12 px-4 md:px-20 relative overflow-hidden h-auto flex items-center flex-col justify-center"
+      className="bg-gradient-to-b from-[#FF6600] font-outfit via-[39%] via-[#FF711B] to-[#FFB669] sm:py-16 py-12 px-4 md:px-20 relative overflow-hidden h-auto flex items-center flex-col justify-center"
       initial="initial"
       animate={controls}
       style={{ perspective: "1200px" }}
