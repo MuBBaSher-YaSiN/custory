@@ -357,7 +357,7 @@ const Trusted_Brand = () => {
               >
                 {/* DYNAMIC TESTIMONIAL CARD */}
                 <div
-                  className="bg-white rounded-[40px] px-4 sm:px-8 md:px-10 md:py-10 py-1 sm:py-2 shadow-lg relative overflow-hidden h-full"
+                  className="bg-white rounded-[40px] px-4 sm:px-8 md:px-10 md:py-10 py-6 sm:py-4 shadow-lg relative overflow-hidden h-full"
                   style={{ transformStyle: "preserve-3d" }}
                 >
                   <motion.div
@@ -368,10 +368,11 @@ const Trusted_Brand = () => {
                   </motion.div>
 
                   <div className="flex flex-col md:flex-row items-center gap-6 relative z-10">
-                    <div className="flex-1 text-center md:text-left">
+                    <div className="flex-1 md:flex text-center md:text-left">
+                      <div className="">
                       <motion.h3
                         variants={quoteVariants}
-                        className="text-[#2f2828] font-bold text-lg md:text-[20px] mb-2"
+                        className="text-[#2f2828] font-bold text-base sm:text-lg md:text-[20px] mb-2"
                       >
                         "{testimonials[page].quote}"
                       </motion.h3>
@@ -384,31 +385,41 @@ const Trusted_Brand = () => {
                       <motion.div variants={authorVariants} className="mb-4 md:mb-0">
                         {/* <p className="text-[#ff6600] text-[20px] font-bold border-b-2 border-[#ff6600] inline-block">{testimonials[page].author}</p> */}
                         <p
-                          className="text-[20px] leading font-outfit font-bold border-b-2 border-[#FFB669] inline-block 
+                          className="text-base sm:text-[20px] leading font-outfit font-bold border-b-2 border-[#FFB669] inline-block 
              bg-gradient-to-b from-[#FFB669] via-[#FF711B] to-[#FFB669] 
              bg-clip-text text-transparent"
                         >
                           {testimonials[page].author}
                         </p>
 
-                        <p className="text-base font-outfit text-[#111204]">
+                        <p className="text-sm md:text-base font-outfit text-[#111204]">
                           {testimonials[page].position}
                         </p>
                       </motion.div>
-                      <motion.div
+                       <motion.div
                         variants={logoVariants}
-                        className="md:mx-0 mx-auto h-[80px] md:h-[100px] flex items-center"
+                        className=" hidden lg:justify-start  h-12 sm:h-[80px] md:h-[100px] lg:flex lg:items-start"
                       >
                         <img
                           src={testimonials[page].logo}
                           alt="Company Logo"
-                          className="max-h-full w-auto object-contain"
+                          className="max-h-full  w-auto object-contain"
                         />
                       </motion.div>
-                    </div>
-
-                    <motion.div
-                      className="w-24 h-24 sm:w-32 sm:h-32 md:w-[280px] md:h-[280px] rounded-full overflow-hidden border-4 border-white shadow-md flex-shrink-0"
+                      </div>
+                      <div className="flex flex-col justify-center items-center gap-4" >
+                      <motion.div
+                        variants={logoVariants}
+                        className="md:mx-0 lg:hidden mx-auto h-12 sm:h-[80px] md:h-[100px] flex items-center"
+                      >
+                        <img
+                          src={testimonials[page].logo}
+                          alt="Company Logo"
+                          className="max-h-full mx-auto w-auto object-contain"
+                        />
+                      </motion.div>
+                       <motion.div
+                      className=" w-28 h-28 sm:w-32 sm:h-32 md:w-[280px] md:h-[280px] rounded-full overflow-hidden border-4 border-white shadow-md flex-shrink-0"
                       variants={photoVariants}
                       animate={["visible", "float"]}
                       style={{ transformStyle: "preserve-3d" }}
@@ -419,6 +430,9 @@ const Trusted_Brand = () => {
                         className="w-full h-full object-cover rounded-full"
                       />
                     </motion.div>
+
+                    </div>
+</div>
                   </div>
 
                   <motion.div
