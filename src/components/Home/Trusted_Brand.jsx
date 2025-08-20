@@ -357,7 +357,7 @@ const Trusted_Brand = () => {
               >
                 {/* DYNAMIC TESTIMONIAL CARD */}
                 <div
-                  className="bg-white rounded-[40px] px-4 sm:px-8 md:px-10 py-10 shadow-lg relative overflow-hidden h-full"
+                  className="bg-white rounded-[40px] px-4 sm:px-8 md:px-10 md:py-10 py-1 sm:py-2 shadow-lg relative overflow-hidden h-full"
                   style={{ transformStyle: "preserve-3d" }}
                 >
                   <motion.div

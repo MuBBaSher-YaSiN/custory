@@ -209,7 +209,7 @@ const HeroComponent = ({ position = [0, 0, 2.5], fov = 25 }) => {
   return (
     <>
       {/* Circular Gradient Glow - Using inline styles instead of Tailwind classes */}
-      <div className="fixed inset-0 flex items-center justify-center pointer-events-none" style={{ zIndex: 0 }}>
+      <div className="fixed inset-0 font-outfit flex items-center justify-center pointer-events-none" style={{ zIndex: 0 }}>
         <motion.div
           variants={floatingGradient}
           initial="initial"
@@ -252,9 +252,9 @@ const HeroComponent = ({ position = [0, 0, 2.5], fov = 25 }) => {
         ))}
       </div>
       
-      <section className="text-center sm:py-10 sm:pb-0 py-0 px-4 relative overflow-hidden sm:mt-24 mt-0 pb-0">
+      <section className="text-center font-outfit sm:py-10 sm:pb-0 py-0 px-4 relative overflow-hidden sm:mt-24 mt-0 pb-0">
         <div className="relative px-2 sm:px-4 pt-10 overflow-hidden lg:min-h-[500px] h-auto">
-          <h1 className="relative z-10 text-center text-3xl sm:text-5xl md:text-6xl md:leading-[65px] lg:text-[90px] lg:leading-[103px] font-bold max-w-5xl mx-auto sm:px-4 px-1 font-[Karla]">
+          <h1 className="relative z-10 font-outfit text-center text-3xl sm:text-5xl md:text-6xl md:leading-[65px] lg:text-[90px] lg:leading-[103px] font-bold max-w-5xl mx-auto sm:px-4 px-1 ">
             <motion.span 
               className="text-black block pb-2"
               variants={floatingHeadline(0)}
@@ -294,8 +294,7 @@ const HeroComponent = ({ position = [0, 0, 2.5], fov = 25 }) => {
               variants={floatingHeadline(3)}
               initial="initial"
               animate={["animate", "floating"]}
-              className="text-black sm:text-xl text-base font-normal mt-3 max-w-[627px] mx-auto"
-              style={{ fontFamily: "'SUIT Variable', 'Poppins', sans-serif" }}
+              className="text-black  sm:text-xl text-base font-normal mt-3 max-w-[627px] mx-auto"
             >
               At Custory, we shape brand stories that live beyond the screen — in
               the hands, homes, and hearts of the people who matter to you.

@@ -1,25 +1,28 @@
-import React, { useEffect, useState, useRef, useCallback } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { motion, useAnimation, useInView, AnimatePresence } from 'framer-motion';
-import image1 from '../../assets/drive-download/1.png'
-import image2 from '../../assets/drive-download/2.png'
-import image3 from '../../assets/drive-download/3.png'
-import image4 from '../../assets/drive-download/4.png'
-import image5 from '../../assets/drive-download/5.png'
-import image6 from '../../assets/drive-download/6.gif'
-import image7 from '../../assets/drive-download/7.png'
-import image8 from '../../assets/drive-download/8.png'
-import image9 from '../../assets/drive-download/9.png'
-import image10 from '../../assets/drive-download/10.png'
-import image11 from '../../assets/drive-download/11.png'
-import image12 from  '../../assets/drive-download/12.png'
-import image13 from  '../../assets/drive-download/13.gif'
-import image14 from  '../../assets/drive-download/14.png'
-import image15 from  '../../assets/drive-download/15.png'
-import image16 from  '../../assets/drive-download/16.png'
-import image17 from  '../../assets/drive-download/17.png'
-
-
+import React, { useEffect, useState, useRef, useCallback } from "react";
+import { useNavigate } from "react-router-dom";
+import {
+  motion,
+  useAnimation,
+  useInView,
+  AnimatePresence,
+} from "framer-motion";
+import image1 from "../../assets/drive-download/1.png";
+import image2 from "../../assets/drive-download/2.png";
+import image3 from "../../assets/drive-download/3.png";
+import image4 from "../../assets/drive-download/4.png";
+import image5 from "../../assets/drive-download/5.png";
+import image6 from "../../assets/drive-download/6.gif";
+import image7 from "../../assets/drive-download/7.png";
+import image8 from "../../assets/drive-download/8.png";
+import image9 from "../../assets/drive-download/9.png";
+import image10 from "../../assets/drive-download/10.png";
+import image11 from "../../assets/drive-download/11.png";
+import image12 from "../../assets/drive-download/12.png";
+import image13 from "../../assets/drive-download/13.gif";
+import image14 from "../../assets/drive-download/14.png";
+import image15 from "../../assets/drive-download/15.png";
+import image16 from "../../assets/drive-download/16.png";
+import image17 from "../../assets/drive-download/17.png";
 
 const Business_Compaigns = () => {
   const navigate = useNavigate();
@@ -34,18 +37,18 @@ const Business_Compaigns = () => {
 
   // Check for reduced motion preference
   useEffect(() => {
-    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
     setPrefersReducedMotion(mediaQuery.matches);
 
     const handleChange = () => setPrefersReducedMotion(mediaQuery.matches);
-    mediaQuery.addEventListener('change', handleChange);
+    mediaQuery.addEventListener("change", handleChange);
 
-    return () => mediaQuery.removeEventListener('change', handleChange);
+    return () => mediaQuery.removeEventListener("change", handleChange);
   }, []);
 
   // Clean up timers properly
   const clearAllTimers = useCallback(() => {
-    timersRef.current.forEach(timer => clearTimeout(timer));
+    timersRef.current.forEach((timer) => clearTimeout(timer));
     timersRef.current = [];
   }, []);
 
@@ -58,8 +61,16 @@ const Business_Compaigns = () => {
 
     const startNewWave = () => {
       // Choose a random wave direction for variety
-      const directions = ["horizontal", "vertical", "diagonal", "center", "zigzag", "radial"];
-      const newDirection = directions[Math.floor(Math.random() * directions.length)];
+      const directions = [
+        "horizontal",
+        "vertical",
+        "diagonal",
+        "center",
+        "zigzag",
+        "radial",
+      ];
+      const newDirection =
+        directions[Math.floor(Math.random() * directions.length)];
 
       setWaveDirection(newDirection);
       setWaveActive(true);
@@ -109,8 +120,8 @@ const Business_Compaigns = () => {
       transition: {
         staggerChildren: 0.12,
         delayChildren: 0.2,
-      }
-    }
+      },
+    },
   };
 
   // Title and text animations
@@ -123,9 +134,9 @@ const Business_Compaigns = () => {
         type: "spring",
         damping: 14,
         stiffness: 60,
-        duration: 1
-      }
-    }
+        duration: 1,
+      },
+    },
   };
 
   const textVariants = {
@@ -137,9 +148,9 @@ const Business_Compaigns = () => {
         type: "spring",
         damping: 12,
         stiffness: 50,
-        delay: 0.3
-      }
-    }
+        delay: 0.3,
+      },
+    },
   };
 
   // Button animation variants with floating effect
@@ -153,14 +164,14 @@ const Business_Compaigns = () => {
         damping: 10,
         stiffness: 50,
         delay: 0.5,
-      }
+      },
     },
     hover: {
       scale: 1.05,
       backgroundColor: "#fff",
       color: "#FF6600",
       boxShadow: "0px 10px 20px rgba(255, 255, 255, 0.25)",
-      transition: { duration: 0.3 }
+      transition: { duration: 0.3 },
     },
     tap: {
       scale: 0.98,
@@ -172,9 +183,9 @@ const Business_Compaigns = () => {
         duration: 3,
         repeat: Infinity,
         repeatType: "reverse",
-        ease: "easeInOut"
-      }
-    }
+        ease: "easeInOut",
+      },
+    },
   };
 
   // Image falling and floating animation
@@ -183,7 +194,7 @@ const Business_Compaigns = () => {
       y: -100,
       opacity: 0,
       rotate: index % 2 === 0 ? -5 : 5,
-      filter: "brightness(0.8)"
+      filter: "brightness(0.8)",
     }),
     animate: (index) => ({
       y: 0,
@@ -195,8 +206,8 @@ const Business_Compaigns = () => {
         damping: 12,
         stiffness: 50,
         duration: 0.8,
-        delay: 0.6 + (index * 0.1)
-      }
+        delay: 0.6 + index * 0.1,
+      },
     }),
     float: (index) => ({
       y: [0, -7 + (index % 3), 0],
@@ -206,8 +217,8 @@ const Business_Compaigns = () => {
         repeat: Infinity,
         repeatType: "reverse",
         ease: "easeInOut",
-        delay: index * 0.2
-      }
+        delay: index * 0.2,
+      },
     }),
     hover: {
       scale: 1.05,
@@ -219,9 +230,9 @@ const Business_Compaigns = () => {
       transition: {
         duration: 0.3,
         type: "spring",
-        stiffness: 300
-      }
-    }
+        stiffness: 300,
+      },
+    },
   };
 
   // Enhanced wave animation calculation
@@ -241,16 +252,20 @@ const Business_Compaigns = () => {
         // Distance from center for circular ripple
         const centerCol = 1.5;
         const centerRow = 1;
-        const distance = Math.sqrt(Math.pow(col - centerCol, 2) + Math.pow(row - centerRow, 2));
+        const distance = Math.sqrt(
+          Math.pow(col - centerCol, 2) + Math.pow(row - centerRow, 2)
+        );
         return distance * 0.15;
       case "zigzag":
         // Creates a zigzag pattern
-        return (col * 0.15) + ((row % 2) * 0.2);
+        return col * 0.15 + (row % 2) * 0.2;
       case "radial":
         // Ripples out from a random point
         const randCol = Math.floor(Math.random() * 4);
         const randRow = Math.floor(Math.random() * 3);
-        const dist = Math.sqrt(Math.pow(col - randCol, 2) + Math.pow(row - randRow, 2));
+        const dist = Math.sqrt(
+          Math.pow(col - randCol, 2) + Math.pow(row - randRow, 2)
+        );
         return dist * 0.15;
       default:
         return 0;
@@ -262,65 +277,29 @@ const Business_Compaigns = () => {
     initial: { opacity: 0 },
     animate: {
       opacity: 0.15,
-      transition: { duration: 1 }
-    }
+      transition: { duration: 1 },
+    },
   };
 
   const images = [
-     
-        {src:image1,
-        lable:"🧠 Brand Strategy & Positioning",
-       },
-       {src:image2,
-        lable:"📊 Branding Deck",
-       },
-        {src:image3,
-        lable: "✒️ Logo Design",
-       },
-       {src:image4,
-        lable:"📦 Packaging Design",
-       },
-       {src:image5,
-        lable:"🚀 Compaign Branding & Direction",
-       },
-       {src:image6,
-        lable:"🚀 Compaign Branding & Direction",
-       },
-       {src:image7,
-        lable:"👕 Merchandise Production",
-       },
-       {src:image8,
-        lable:"👕 Merchandise Production",
-       },
-       {src:image9,
-        lable: "🖨️ Print Collateral",
-       },
-       {src:image10,
-        lable:"🎨 Artist Collaboration",
-       },
-       {src:image11,
-        lable:"📸 Content Creation",
-       },
-       {src:image12,
-        lable:"📊 Branding Deck",
-       },
-       {src:image13,
-        lable:"📊 Branding Deck",
-       },
-       {src:image14,
-        lable:"📊 Branding Deck",
-       },
-       {src:image15,
-        lable:"📊 Branding Deck",
-       },
-       {src:image16,
-        lable:"📊 Branding Deck",
-       },
-       {src:image17,
-        lable:"📊 Branding Deck",
-       },
+    { src: image1, lable: "🧠 Brand Strategy & Positioning" },
+    { src: image2, lable: "📊 Branding Deck" },
+    { src: image3, lable: "✒️ Logo Design" },
+    { src: image4, lable: "📦 Packaging Design" },
+    { src: image5, lable: "🚀 Compaign Branding & Direction" },
+    { src: image6, lable: "🚀 Compaign Branding & Direction" },
+    { src: image7, lable: "👕 Merchandise Production" },
+    { src: image8, lable: "👕 Merchandise Production" },
+    { src: image9, lable: "🖨️ Print Collateral" },
+    { src: image10, lable: "🎨 Artist Collaboration" },
+    { src: image11, lable: "📸 Content Creation" },
+    { src: image12, lable: "📊 Branding Deck" },
+    { src: image13, lable: "📊 Branding Deck" },
+    { src: image14, lable: "📊 Branding Deck" },
+    { src: image15, lable: "📊 Branding Deck" },
+    { src: image16, lable: "📊 Branding Deck" },
+    { src: image17, lable: "📊 Branding Deck" },
   ];
-
 
   return (
     <motion.div
@@ -331,7 +310,7 @@ const Business_Compaigns = () => {
       animate={controls}
     >
       {/* Parallax floating elements in background */}
-      {!prefersReducedMotion && (
+      {!prefersReducedMotion &&
         [...Array(12)].map((_, i) => (
           <motion.div
             key={`parallax-${i}`}
@@ -352,12 +331,11 @@ const Business_Compaigns = () => {
                 duration: 15 + Math.random() * 20,
                 repeat: Infinity,
                 repeatType: "reverse",
-                ease: "easeInOut"
-              }
+                ease: "easeInOut",
+              },
             }}
           />
-        ))
-      )}
+        ))}
 
       <div className="max-w-full font-outfit mx-auto text-center relative z-10">
         <motion.h1
@@ -373,14 +351,14 @@ const Business_Compaigns = () => {
           variants={textVariants}
         >
           {/* Merchandise that builds culture and creates connection. */}
-          Branding, content, and merchandise that people connect with — and remember.
-
+          Branding, content, and merchandise that people connect with — and
+          remember.
         </motion.p>
 
         <div className="mb-24">
           <motion.button
             className="bg-transparent border border-white text-white z-50 px-[20px] py-4 rounded-lg hover:bg-white hover:text-[#FF6600] transition relative overflow-hidden group"
-            onClick={() => navigate('/contact')}
+            onClick={() => navigate("/contact")}
             variants={buttonVariants}
             whileHover="hover"
             whileTap="tap"
@@ -397,7 +375,7 @@ const Business_Compaigns = () => {
                   repeat: Infinity,
                   duration: 3,
                   ease: "linear",
-                  repeatDelay: 5
+                  repeatDelay: 5,
                 }}
                 style={{ pointerEvents: "none" }}
               />
@@ -407,51 +385,73 @@ const Business_Compaigns = () => {
         </div>
 
         {/* Image grid with enhanced wave animations */}
-        <div className="columns-2 md:columns-4 gap-[24px] space-y-[60px] relative">
+        <div className=" columns-1 sm:columns-2 md:columns-6 gap-4 space-y-4 relative">
           {images.map((items, index) => (
             <motion.div
               key={index}
-              className="relative overflow-hidden rounded-lg group cursor-pointer"
               variants={imageVariants}
               custom={index}
               initial="initial"
               animate={prefersReducedMotion ? "animate" : ["animate", "float"]}
-              // whileHover="hover"
-              // onHoverStart={() => setHoveredIndex(index)}
-              // onHoverEnd={() => setHoveredIndex(null)}
             >
               {/* 3D card effect wrapper */}
               <motion.div
                 className="w-full h-full"
                 style={{
                   transformStyle: "preserve-3d",
-                  perspective: "1000px"
+                  perspective: "1000px",
                 }}
               >
                 {/* Main image with advanced wave effect */}
                 <motion.img
                   src={items.src}
                   alt={`Portfolio item ${index + 1}`}
-                  className={`w-full rounded-lg ${index >= 3 ? "lg:relative lg:top-10 top-0" : ""
-                    }`}
-                  animate={waveActive && !prefersReducedMotion ? {
-                    scale: [1, 1.04, 0.98, 1.02, 1],
-                    y: [0, -8, 5, -3, 0],
-                    x: [0, 4, -5, 2, 0],
-                    rotate: [0, 1, -1, 0.5, 0],
-                    filter: [
-                      'brightness(1) contrast(1)',
-                      'brightness(1.2) contrast(1.05)',
-                      'brightness(0.95) contrast(1.1)',
-                      'brightness(1.08) contrast(1.02)',
-                      'brightness(1) contrast(1)'
-                    ],
-                    transition: {
-                      duration: 3.5, // Longer duration for smoother wave
-                      ease: "easeInOut",
-                      delay: getWaveDelay(index, waveDirection)
-                    }
-                  } : {}}
+                  // className={`w-full h-80 object-cover rounded-lg ${index >= 3 ? "lg:relative lg:top-10 top-0" : ""
+                  //   }`}
+
+                  className={`w-full rounded-lg object-cover 
+                     ${
+                       index === 1 || index === 2 || index === 7 || index === 9
+                         ? "h-[500px]"
+                         : ""
+                     }
+                     ${
+                       index === 4 ||
+                       index === 11 ||
+                       index === 13 ||
+                       index === 14 ||
+                       index === 16
+                         ? "h-72"
+                         : " "
+                     }
+                     ${
+                       (index % 6) % 2 === 0
+                         ? "lg:py-8" // smaller offset on mobile, grows on larger screens
+                         : ""
+                     }
+                      ${index >= 3 ? "lg:relative lg:top-10 top-0" : ""}`}
+                  animate={
+                    waveActive && !prefersReducedMotion
+                      ? {
+                          scale: [1, 1.04, 0.98, 1.02, 1],
+                          y: [0, -8, 5, -3, 0],
+                          x: [0, 4, -5, 2, 0],
+                          rotate: [0, 1, -1, 0.5, 0],
+                          filter: [
+                            "brightness(1) contrast(1)",
+                            "brightness(1.2) contrast(1.05)",
+                            "brightness(0.95) contrast(1.1)",
+                            "brightness(1.08) contrast(1.02)",
+                            "brightness(1) contrast(1)",
+                          ],
+                          transition: {
+                            duration: 3.5, // Longer duration for smoother wave
+                            ease: "easeInOut",
+                            delay: getWaveDelay(index, waveDirection),
+                          },
+                        }
+                      : {}
+                  }
                   loading="lazy"
                 />
 
@@ -466,8 +466,8 @@ const Business_Compaigns = () => {
                       transition: {
                         duration: 2.5,
                         ease: "easeInOut",
-                        delay: getWaveDelay(index, waveDirection)
-                      }
+                        delay: getWaveDelay(index, waveDirection),
+                      },
                     }}
                   />
                 )}
@@ -477,7 +477,8 @@ const Business_Compaigns = () => {
                   <motion.div
                     className="absolute -inset-1 rounded-lg pointer-events-none"
                     style={{
-                      background: 'radial-gradient(circle, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 70%)',
+                      background:
+                        "radial-gradient(circle, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 70%)",
                       transformStyle: "preserve-3d",
                     }}
                     initial={{ opacity: 0, scale: 0.8, z: 0 }}
@@ -488,8 +489,8 @@ const Business_Compaigns = () => {
                       transition: {
                         duration: 3.5,
                         ease: "easeOut",
-                        delay: getWaveDelay(index, waveDirection)
-                      }
+                        delay: getWaveDelay(index, waveDirection),
+                      },
                     }}
                   />
                 )}
@@ -498,35 +499,33 @@ const Business_Compaigns = () => {
                 <motion.div
                   className="absolute bottom-0 left-0 right-0 h-8 opacity-30"
                   style={{
-                    background: 'linear-gradient(to top, rgba(0,0,0,0.5), rgba(0,0,0,0))',
-                    borderBottomLeftRadius: '8px',
-                    borderBottomRightRadius: '8px'
+                    background:
+                      "linear-gradient(to top, rgba(0,0,0,0.5), rgba(0,0,0,0))",
+                    borderBottomLeftRadius: "8px",
+                    borderBottomRightRadius: "8px",
                   }}
-                  animate={waveActive && !prefersReducedMotion ? {
-                    y: [0, 5, -2, 3, 0],
-                    opacity: [0.3, 0.5, 0.2, 0.4, 0.3],
-                    transition: {
-                      duration: 3.5,
-                      delay: getWaveDelay(index, waveDirection)
-                    }
-                  } : {}}
+                  animate={
+                    waveActive && !prefersReducedMotion
+                      ? {
+                          y: [0, 5, -2, 3, 0],
+                          opacity: [0.3, 0.5, 0.2, 0.4, 0.3],
+                          transition: {
+                            duration: 3.5,
+                            delay: getWaveDelay(index, waveDirection),
+                          },
+                        }
+                      : {}
+                  }
                 />
               </motion.div>
 
               {/* Zoom interaction effect on hover */}
               <AnimatePresence className="">
-              
-                       <motion.div
-                      className="absolute inset-0  flex items-end justify-center border-3 p-4"
-                    
-                    >
-                     
-                        <span className="text-white bg-gradient-to-t from-black/60 to-black/10 rounded-lg px-4 ">{items.lable}</span>
-                     
-                    </motion.div>
-                
-
-
+                <motion.div className="absolute inset-0  flex items-end justify-center border-3 p-4">
+                  <span className="text-white bg-gradient-to-t from-black/60 to-black/10 rounded-lg px-4 ">
+                    {items.lable}
+                  </span>
+                </motion.div>
               </AnimatePresence>
             </motion.div>
           ))}

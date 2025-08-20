@@ -179,7 +179,7 @@ const B2CSection = () => {
 
   return (
     <motion.div 
-      className="bg-white px-4 md:px-20 text-center relative overflow-hidden min-h-[800px] py-10"
+      className="bg-white font-outfit px-4 md:px-20 text-center relative overflow-hidden min-h-[800px] py-10"
       ref={containerRef}
       variants={liquidBackground}
       initial="initial"
