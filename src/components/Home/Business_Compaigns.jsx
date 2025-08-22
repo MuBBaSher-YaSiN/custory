@@ -304,7 +304,7 @@ const Business_Compaigns = () => {
   return (
     <motion.div
       ref={containerRef}
-      className="bg-gradient-to-b from-[#FF6600] via-[39%] via-[#FF711B] to-[#FFB669] text-white min-h-screen px-0.5 sm:pt-20 pt-12 relative overflow-hidden"
+      className="bg-gradient-to-b font-outfit from-[#FF6600] via-[39%] via-[#FF711B] to-[#FFB669] text-white min-h-screen px-0.5 sm:pt-20 pt-12 relative overflow-hidden"
       variants={containerVariants}
       initial="initial"
       animate={controls}
