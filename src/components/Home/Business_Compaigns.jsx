@@ -317,7 +317,7 @@ const Business_Compaigns = () => {
             className="absolute rounded-full bg-white pointer-events-none"
             variants={parallaxVariants}
             initial="initial"
-            animate="animate"
+            // animate="animate"
             style={{
               width: 10 + Math.random() * 50,
               height: 10 + Math.random() * 50,
